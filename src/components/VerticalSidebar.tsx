@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { X, Instagram, Twitter, Linkedin } from "lucide-react";
+import { X, Instagram, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
 import { Button } from "@/components/ui/button";
@@ -12,9 +12,8 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Instagram, href: "https://instagram.com/justbabafemi", label: "Instagram" },
+  { icon: Twitter, href: "https://twitter.com/justbabafemi", label: "Twitter" },
 ];
 
 export const VerticalSidebar = () => {
