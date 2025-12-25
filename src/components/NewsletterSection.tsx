@@ -21,13 +21,13 @@ const NewsletterSection = () => {
                 className="group border-b border-border/50 pb-8 last:border-0"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <time className="text-xs uppercase tracking-widest text-muted-foreground">
+                <time className="text-xs uppercase tracking-widest text-foreground/60">
                   {post.date}
                 </time>
-                <h3 className="text-xl md:text-2xl font-light mt-2 mb-3 group-hover:text-primary/80 transition-colors">
+                <h3 className="text-xl md:text-2xl font-light mt-2 mb-3 text-foreground group-hover:text-primary/80 transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed">
                   {post.excerpt}
                 </p>
               </article>
