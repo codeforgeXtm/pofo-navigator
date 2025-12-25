@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Instagram, Twitter, Dribbble } from "lucide-react";
+import { X, Instagram, Twitter, Dribbble } from "lucide-react";
 import { cn } from "@/lib/utils";
+import bfLogoIcon from "@/assets/bf-logo-icon.png";
+import bfLogoFull from "@/assets/bf-logo-full.png";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -76,39 +78,34 @@ export const VerticalSidebar = () => {
         />
 
         <div className="relative flex h-full flex-col justify-between py-8">
-          {/* Toggle Button */}
+          {/* Toggle Button - Using bF Logo */}
           <div className="flex flex-col items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="group relative flex h-12 w-12 items-center justify-center text-sidebar-foreground transition-all duration-300 hover:text-primary"
+              className="group relative flex h-14 w-14 items-center justify-center transition-all duration-300 hover:scale-105"
               aria-label="Toggle menu"
             >
-              <span className="absolute inset-0 rounded-full bg-primary/0 transition-all duration-300 group-hover:bg-primary/10" />
               {isOpen ? (
-                <X className="h-5 w-5 transition-transform duration-500 rotate-0 group-hover:rotate-90" />
+                <X className="h-6 w-6 text-dark-foreground transition-transform duration-500 hover:rotate-90" />
               ) : (
-                <Menu className="h-5 w-5 transition-transform duration-300" />
+                <img 
+                  src={bfLogoIcon} 
+                  alt="BF Logo" 
+                  className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                />
               )}
             </button>
 
-            {/* Logo - Expanded */}
+            {/* Full Logo - Expanded */}
             <div className={cn(
-              "mt-12 transition-all duration-700",
+              "mt-8 transition-all duration-700",
               isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
             )}>
-              <span className="font-display text-3xl font-bold tracking-tight text-dark-foreground">
-                FOLIO<span className="text-primary">*</span>
-              </span>
-            </div>
-
-            {/* Logo - Collapsed (Vertical) */}
-            <div className={cn(
-              "mt-12 transition-all duration-700 absolute top-20",
-              !isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-            )}>
-              <span className="vertical-text font-display text-lg font-bold tracking-[0.3em] text-dark-foreground">
-                FOLIO<span className="text-primary">*</span>
-              </span>
+              <img 
+                src={bfLogoFull} 
+                alt="BABAFEMI" 
+                className="h-24 w-auto object-contain"
+              />
             </div>
           </div>
 
