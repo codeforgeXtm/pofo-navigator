@@ -8,9 +8,8 @@ const footerLinks = {
     { label: "Work", href: "#portfolio" },
   ],
   connect: [
-    { label: "LinkedIn", href: "#" },
-    { label: "Instagram", href: "#" },
-    { label: "Twitter", href: "#" },
+    { label: "Instagram", href: "https://instagram.com/justbabafemi" },
+    { label: "Twitter", href: "https://twitter.com/justbabafemi" },
   ],
   film: [
     { label: "One Chance", href: "#" },
