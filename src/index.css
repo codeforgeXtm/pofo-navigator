@@ -277,3 +277,12 @@
     filter: drop-shadow(0 0 40px hsl(var(--primary) / 0.6));
   }
 }
+
+/* Hide scrollbar for thumbnail strip */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
