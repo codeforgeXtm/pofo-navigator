@@ -85,7 +85,7 @@ export const ContactSection = () => {
               <Input
                 required
                 type="email"
-                placeholder="jane@framer.com"
+                placeholder="janesmith@gmail.com"
                 className="bg-card border-border text-foreground placeholder:text-foreground/30 focus:border-foreground"
               />
             </div>
