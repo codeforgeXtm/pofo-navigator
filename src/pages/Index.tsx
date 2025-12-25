@@ -1,6 +1,7 @@
 import { VerticalSidebar } from "@/components/VerticalSidebar";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
+import { SkillsSection } from "@/components/SkillsSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
@@ -15,6 +16,7 @@ const Index = () => {
       <main className="ml-20">
         <HeroSection />
         <AboutSection />
+        <SkillsSection />
         <PortfolioSection />
         <ContactSection />
         <Footer />
