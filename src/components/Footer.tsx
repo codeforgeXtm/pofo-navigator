@@ -1,4 +1,5 @@
 import { Instagram, Twitter, Dribbble, Linkedin, ArrowUp } from "lucide-react";
+import bfLogoIcon from "@/assets/bf-logo-icon.png";
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
@@ -18,8 +19,9 @@ export const Footer = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Logo */}
           <div className="flex items-center gap-8">
-            <span className="font-display text-2xl font-bold tracking-tight text-dark-foreground">
-              FOLIO<span className="text-primary">*</span>
+            <img src={bfLogoIcon} alt="BABAFEMI" className="h-10 w-10 object-contain" />
+            <span className="font-sans text-xl font-medium tracking-[0.2em] text-dark-foreground">
+              BABAFEMI
             </span>
             <span className="hidden md:block h-6 w-px bg-dark-foreground/20" />
             <p className="hidden md:block text-sm text-dark-foreground/50">
@@ -54,7 +56,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-dark-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-dark-foreground/40">
-            © {new Date().getFullYear()} FOLIO. All rights reserved.
+            © {new Date().getFullYear()} BABAFEMI. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-dark-foreground/40">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
