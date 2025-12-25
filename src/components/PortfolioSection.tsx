@@ -98,16 +98,8 @@ export const PortfolioSection = () => {
               Bold projects shaping stories.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Button */}
             <div className="reveal flex flex-wrap justify-center gap-4 mt-8">
-              <Button
-                className="group bg-foreground hover:bg-foreground text-background px-6 py-5 text-sm uppercase tracking-wider"
-              >
-                <span className="flex items-center gap-2">
-                  Explore Projects
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Button>
               <Button
                 onClick={scrollToContact}
                 variant="outline"
