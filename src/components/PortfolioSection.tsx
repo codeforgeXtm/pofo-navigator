@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -10,7 +11,7 @@ const portfolioItems = [
   {
     id: 1,
     title: "Elegance Portrait",
-    category: "Portrait Photography",
+    category: "Portrait",
     image: portfolio1,
     size: "tall",
   },
@@ -24,7 +25,7 @@ const portfolioItems = [
   {
     id: 3,
     title: "Luxury Product",
-    category: "Product Photography",
+    category: "Product",
     image: portfolio3,
     size: "normal",
   },
@@ -38,21 +39,25 @@ const portfolioItems = [
   {
     id: 5,
     title: "Interior Space",
-    category: "Interior Design",
+    category: "Interior",
     image: portfolio5,
     size: "tall",
   },
   {
     id: 6,
-    title: "Coffee Art",
-    category: "Food & Lifestyle",
+    title: "Coffee Culture",
+    category: "Lifestyle",
     image: portfolio6,
     size: "normal",
   },
 ];
 
+const categories = ["All", "Portrait", "Architecture", "Product", "Landscape", "Interior", "Lifestyle"];
+
 export const PortfolioSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -66,64 +71,99 @@ export const PortfolioSection = () => {
       { threshold: 0.1 }
     );
 
-    const elements = sectionRef.current?.querySelectorAll(".reveal");
+    const elements = sectionRef.current?.querySelectorAll(".reveal, .reveal-scale");
     elements?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
-  const getGridClass = (size: string, index: number) => {
-    const baseClass = "portfolio-item group cursor-pointer";
+  const filteredItems = activeCategory === "All" 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === activeCategory);
+
+  const getGridClass = (size: string) => {
     switch (size) {
       case "tall":
-        return `${baseClass} row-span-2`;
+        return "row-span-2";
       case "wide":
-        return `${baseClass} col-span-1 md:col-span-2`;
+        return "col-span-1 md:col-span-2";
       default:
-        return baseClass;
+        return "";
     }
   };
 
   return (
-    <section id="portfolio" ref={sectionRef} className="py-24 md:py-32 bg-background">
+    <section id="portfolio" ref={sectionRef} className="py-32 md:py-40 bg-dark">
       <div className="container px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="reveal mb-4 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
+        <div className="text-center mb-12">
+          <p className="reveal mb-4 text-xs font-medium uppercase tracking-[0.3em] text-dark-foreground/50">
             Selected Works
           </p>
-          <h2 className="reveal font-display text-3xl sm:text-4xl md:text-5xl font-normal">
-            Portfolio
+          <h2 className="reveal font-display text-4xl sm:text-5xl md:text-6xl font-normal text-dark-foreground">
+            Featured <span className="italic text-primary">Portfolio</span>
           </h2>
         </div>
 
+        {/* Category Filter */}
+        <div className="reveal flex flex-wrap justify-center gap-4 mb-16">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-5 py-2 text-xs uppercase tracking-wider transition-all duration-300 border ${
+                activeCategory === category
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-transparent text-dark-foreground/60 border-dark-foreground/20 hover:border-dark-foreground/40 hover:text-dark-foreground"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         {/* Masonry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[300px]">
-          {portfolioItems.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[280px] md:auto-rows-[320px]">
+          {filteredItems.map((item, index) => (
             <article
               key={item.id}
-              className={`${getGridClass(item.size, index)} reveal`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`reveal-scale group cursor-pointer ${getGridClass(item.size)}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+              onMouseEnter={() => setHoveredItem(item.id)}
+              onMouseLeave={() => setHoveredItem(null)}
             >
               <div className="relative h-full w-full overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className={`h-full w-full object-cover transition-all duration-700 ${
+                    hoveredItem === item.id ? "scale-110" : "scale-100"
+                  }`}
                   loading="lazy"
                 />
                 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-foreground/0 transition-all duration-500 group-hover:bg-foreground/50" />
+                <div className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent transition-opacity duration-500 ${
+                  hoveredItem === item.id ? "opacity-100" : "opacity-0"
+                }`} />
                 
                 {/* Content */}
-                <div className="portfolio-overlay absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
-                  <h3 className="font-display text-xl md:text-2xl text-background mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs uppercase tracking-[0.2em] text-background/80">
-                    {item.category}
-                  </p>
+                <div className={`absolute inset-0 flex flex-col justify-end p-6 transition-all duration-500 ${
+                  hoveredItem === item.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}>
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <p className="text-xs uppercase tracking-wider text-primary mb-2">
+                        {item.category}
+                      </p>
+                      <h3 className="font-display text-2xl text-dark-foreground">
+                        {item.title}
+                      </h3>
+                    </div>
+                    <div className="h-12 w-12 flex items-center justify-center border border-dark-foreground/30 bg-dark-foreground/10 backdrop-blur-sm transition-all duration-300 group-hover:bg-primary group-hover:border-primary">
+                      <ArrowUpRight className="h-5 w-5 text-dark-foreground" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </article>
