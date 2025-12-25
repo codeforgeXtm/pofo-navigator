@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Send, MapPin, Mail, Phone, ArrowUpRight } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,7 +9,6 @@ export const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,148 +51,69 @@ export const ContactSection = () => {
     >
       {/* Background decoration */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-dark to-transparent" />
-      <div className="absolute -bottom-20 left-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
 
-      <div className="container max-w-6xl px-6 relative">
+      <div className="container max-w-2xl px-6 relative">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <p className="reveal mb-4 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground">
-            Get In Touch
-          </p>
-          <h2 className="reveal font-display text-4xl sm:text-5xl md:text-6xl font-normal text-foreground">
-            Let's create something
-            <br />
-            <span className="italic text-primary">beautiful</span> together
+        <div className="text-center mb-16">
+          <h2 className="reveal font-display text-4xl sm:text-5xl font-normal text-foreground mb-4">
+            Let's Create Something Bold.
           </h2>
+          <p className="reveal text-foreground/60">
+            Ready to collaborate or launch a venture together?
+            <br />
+            Reach out.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-16">
-          {/* Left Column - Contact Info */}
-          <div className="lg:col-span-2">
-            <div className="space-y-8">
-              {[
-                { icon: MapPin, label: "Location", value: "Paris, France" },
-                { icon: Mail, label: "Email", value: "hello@folio.com" },
-                { icon: Phone, label: "Phone", value: "+33 1 23 45 67 89" },
-              ].map((item, index) => (
-                <div 
-                  key={item.label} 
-                  className="reveal group flex items-start gap-5 cursor-pointer"
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-border bg-card transition-all duration-300 group-hover:border-primary group-hover:bg-primary/5">
-                    <item.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
-                      {item.label}
-                    </p>
-                    <p className="text-lg text-foreground group-hover:text-primary transition-colors">
-                      {item.value}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Card */}
-            <div className="reveal mt-12 p-8 border border-border bg-card">
-              <p className="text-sm text-muted-foreground mb-4">
-                Prefer a quick call? Book a free consultation.
-              </p>
-              <Button 
-                variant="outline" 
-                className="group w-full justify-between border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
-              >
-                Schedule a Call
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </Button>
-            </div>
-          </div>
-
-          {/* Right Column - Form */}
-          <form onSubmit={handleSubmit} className="lg:col-span-3 space-y-6">
-            <div className="reveal grid sm:grid-cols-2 gap-6">
-              <div className="relative">
-                <label 
-                  className={`absolute left-0 transition-all duration-300 ${
-                    focusedField === 'name' ? '-top-6 text-xs text-primary' : 'top-3 text-sm text-muted-foreground'
-                  }`}
-                >
-                  Your Name
-                </label>
-                <Input
-                  required
-                  className="bg-transparent border-0 border-b border-border rounded-none px-0 py-3 text-foreground placeholder:text-transparent focus:border-primary focus-visible:ring-0"
-                  onFocus={() => setFocusedField('name')}
-                  onBlur={(e) => !e.target.value && setFocusedField(null)}
-                />
-              </div>
-              <div className="relative">
-                <label 
-                  className={`absolute left-0 transition-all duration-300 ${
-                    focusedField === 'email' ? '-top-6 text-xs text-primary' : 'top-3 text-sm text-muted-foreground'
-                  }`}
-                >
-                  Email Address
-                </label>
-                <Input
-                  required
-                  type="email"
-                  className="bg-transparent border-0 border-b border-border rounded-none px-0 py-3 text-foreground placeholder:text-transparent focus:border-primary focus-visible:ring-0"
-                  onFocus={() => setFocusedField('email')}
-                  onBlur={(e) => !e.target.value && setFocusedField(null)}
-                />
-              </div>
-            </div>
-
-            <div className="reveal relative">
-              <label 
-                className={`absolute left-0 transition-all duration-300 ${
-                  focusedField === 'subject' ? '-top-6 text-xs text-primary' : 'top-3 text-sm text-muted-foreground'
-                }`}
-              >
-                Subject
+        {/* Contact Form */}
+        <form onSubmit={handleSubmit} className="reveal space-y-6">
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-xs uppercase tracking-wider text-foreground/50 mb-2">
+                Name
               </label>
               <Input
                 required
-                className="bg-transparent border-0 border-b border-border rounded-none px-0 py-3 text-foreground placeholder:text-transparent focus:border-primary focus-visible:ring-0"
-                onFocus={() => setFocusedField('subject')}
-                onBlur={(e) => !e.target.value && setFocusedField(null)}
+                placeholder="Jane Smith"
+                className="bg-card border-border text-foreground placeholder:text-foreground/30 focus:border-foreground"
               />
             </div>
-
-            <div className="reveal relative">
-              <label 
-                className={`absolute left-0 transition-all duration-300 ${
-                  focusedField === 'message' ? '-top-6 text-xs text-primary' : 'top-3 text-sm text-muted-foreground'
-                }`}
-              >
-                Your Message
+            <div>
+              <label className="block text-xs uppercase tracking-wider text-foreground/50 mb-2">
+                Email
               </label>
-              <Textarea
+              <Input
                 required
-                rows={4}
-                className="bg-transparent border-0 border-b border-border rounded-none px-0 py-3 text-foreground placeholder:text-transparent focus:border-primary focus-visible:ring-0 resize-none"
-                onFocus={() => setFocusedField('message')}
-                onBlur={(e) => !e.target.value && setFocusedField(null)}
+                type="email"
+                placeholder="jane@framer.com"
+                className="bg-card border-border text-foreground placeholder:text-foreground/30 focus:border-foreground"
               />
             </div>
+          </div>
 
-            <div className="reveal pt-6">
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="group magnetic-btn bg-foreground hover:bg-foreground text-background px-10 py-6 text-sm uppercase tracking-wider"
-              >
-                <span className="flex items-center gap-3">
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Button>
-            </div>
-          </form>
-        </div>
+          <div>
+            <label className="block text-xs uppercase tracking-wider text-foreground/50 mb-2">
+              Message
+            </label>
+            <Textarea
+              required
+              rows={5}
+              placeholder="Your message..."
+              className="bg-card border-border text-foreground placeholder:text-foreground/30 focus:border-foreground resize-none"
+            />
+          </div>
+
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full group bg-foreground hover:bg-foreground/90 text-background py-6 text-sm uppercase tracking-wider"
+          >
+            <span className="flex items-center justify-center gap-2">
+              {isSubmitting ? "Sending..." : "Drop me a message and let's create something unforgettable"}
+              <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </span>
+          </Button>
+        </form>
       </div>
     </section>
   );

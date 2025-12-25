@@ -1,20 +1,19 @@
 import { useState, useEffect, useRef } from "react";
-import { X, Instagram, Twitter, Dribbble } from "lucide-react";
+import { X, Instagram, Twitter, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
-import bfLogoFull from "@/assets/bf-logo-full.png";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#portfolio" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Dribbble, href: "#", label: "Dribbble" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
 export const VerticalSidebar = () => {
@@ -61,6 +60,12 @@ export const VerticalSidebar = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToContact = () => {
+    setIsOpen(false);
+    const element = document.getElementById("contact");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       {/* Sidebar */}
@@ -96,16 +101,14 @@ export const VerticalSidebar = () => {
               )}
             </button>
 
-            {/* Full Logo - Expanded */}
+            {/* Brand Name - Expanded */}
             <div className={cn(
               "mt-8 transition-all duration-700",
               isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
             )}>
-              <img 
-                src={bfLogoFull} 
-                alt="BABAFEMI" 
-                className="h-24 w-auto object-contain"
-              />
+              <span className="font-sans text-xl font-medium tracking-[0.15em] text-dark-foreground">
+                Babafemi<sup className="text-primary text-xs">®</sup>
+              </span>
             </div>
           </div>
 
@@ -114,7 +117,7 @@ export const VerticalSidebar = () => {
             "flex-1 flex flex-col justify-center transition-all duration-700",
             isOpen ? "px-10 opacity-100 translate-x-0" : "px-4 opacity-0 -translate-x-4 pointer-events-none"
           )}>
-            <ul className="space-y-8">
+            <ul className="space-y-6">
               {navItems.map((item, index) => (
                 <li 
                   key={item.label}
@@ -127,32 +130,30 @@ export const VerticalSidebar = () => {
                   <button
                     onClick={() => handleNavClick(item.href)}
                     className={cn(
-                      "group relative flex items-center gap-4 text-lg font-medium tracking-wide transition-colors",
+                      "group relative text-base font-normal tracking-wide transition-colors",
                       activeSection === item.href.replace("#", "")
                         ? "text-dark-foreground"
                         : "text-sidebar-foreground hover:text-dark-foreground"
                     )}
                   >
-                    {/* Active indicator */}
-                    <span
-                      className={cn(
-                        "h-px bg-primary transition-all duration-500",
-                        activeSection === item.href.replace("#", "") ? "w-8" : "w-0 group-hover:w-4"
-                      )}
-                    />
-                    <span className="relative">
-                      {item.label}
-                      <span
-                        className={cn(
-                          "absolute -bottom-1 left-0 h-px bg-primary transition-all duration-300",
-                          activeSection === item.href.replace("#", "") ? "w-full" : "w-0 group-hover:w-full"
-                        )}
-                      />
-                    </span>
+                    {item.label}
                   </button>
                 </li>
               ))}
             </ul>
+
+            {/* Contact Button */}
+            <div className={cn(
+              "mt-8 transition-all duration-700",
+              isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
+            )}>
+              <Button
+                onClick={scrollToContact}
+                className="bg-foreground hover:bg-foreground/90 text-background px-6 py-5 text-sm uppercase tracking-wider"
+              >
+                Contact
+              </Button>
+            </div>
           </nav>
 
           {/* Social Links */}
