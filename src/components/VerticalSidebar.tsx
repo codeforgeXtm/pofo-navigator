@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { X, Instagram, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
+import bfLogoText from "@/assets/bf-logo-text.png";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -83,33 +84,39 @@ export const VerticalSidebar = () => {
         />
 
         <div className="relative flex h-full flex-col justify-between py-8">
-          {/* Toggle Button - Using bF Logo */}
+          {/* Header - Logo/Close Button */}
           <div className="flex flex-col items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="group relative flex h-14 w-14 items-center justify-center transition-all duration-300 hover:scale-105"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6 text-dark-foreground transition-transform duration-500 hover:rotate-90" />
-              ) : (
+            {isOpen ? (
+              /* Expanded state: X on right, logo centered */
+              <div className="w-full flex items-center justify-between px-6">
+                <div className="w-6" /> {/* Spacer for centering */}
+                <img 
+                  src={bfLogoText} 
+                  alt="Babafemi Logo" 
+                  className="h-20 object-contain"
+                />
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="flex h-8 w-8 items-center justify-center transition-all duration-300 hover:scale-110"
+                  aria-label="Close menu"
+                >
+                  <X className="h-5 w-5 text-dark-foreground transition-transform duration-500 hover:rotate-90" />
+                </button>
+              </div>
+            ) : (
+              /* Collapsed state: just the icon logo */
+              <button
+                onClick={() => setIsOpen(true)}
+                className="group relative flex h-14 w-14 items-center justify-center transition-all duration-300 hover:scale-105"
+                aria-label="Open menu"
+              >
                 <img 
                   src={bfLogoIcon} 
                   alt="BF Logo" 
                   className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
                 />
-              )}
-            </button>
-
-            {/* Brand Name - Expanded */}
-            <div className={cn(
-              "mt-8 transition-all duration-700",
-              isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
-            )}>
-              <span className="font-sans text-xl font-medium tracking-[0.15em] text-dark-foreground">
-                Babafemi<sup className="text-primary text-xs">®</sup>
-              </span>
-            </div>
+              </button>
+            )}
           </div>
 
           {/* Navigation */}
