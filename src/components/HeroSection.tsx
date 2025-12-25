@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
@@ -35,8 +35,8 @@ export const HeroSection = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToAbout = () => {
-    const element = document.getElementById("about");
+  const scrollToContact = () => {
+    const element = document.getElementById("contact");
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -82,64 +82,46 @@ export const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        {/* Tagline */}
-        <div className="mb-8 opacity-0 animate-fade-in animation-delay-100">
-          <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.4em] text-dark-foreground/50">
-            <span className="h-px w-8 bg-primary" />
-            Creative Visual Artist
-            <span className="h-px w-8 bg-primary" />
-          </span>
-        </div>
-        
         {/* Main Heading */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal leading-[0.9] mb-8">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6">
+          <span className="block opacity-0 animate-fade-in animation-delay-100 text-dark-foreground">
+            Building Things That Inspire,
+          </span>
           <span className="block opacity-0 animate-fade-in animation-delay-200 text-dark-foreground">
-            Capturing
-          </span>
-          <span className="block opacity-0 animate-fade-in animation-delay-300 italic text-gradient">
-            Moments
-          </span>
-          <span className="block opacity-0 animate-fade-in animation-delay-400 text-dark-foreground">
-            That Matter
+            and <span className="italic text-gradient">Move People.</span>
           </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="max-w-xl mx-auto text-dark-foreground/60 text-lg mb-12 opacity-0 animate-fade-in animation-delay-500">
-          Product & lifestyle photographer based in Paris, 
-          creating visual stories that inspire and connect.
+        <p className="max-w-2xl mx-auto text-dark-foreground/60 text-lg md:text-xl mb-12 opacity-0 animate-fade-in animation-delay-300">
+          Babafemi Fagbemi — creator, strategist, founder.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in animation-delay-700">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in animation-delay-500">
           <Button
             onClick={scrollToPortfolio}
             className="group magnetic-btn bg-primary hover:bg-primary text-primary-foreground px-8 py-6 text-sm uppercase tracking-wider border-0"
           >
             <span className="flex items-center gap-2">
-              View Work
+              Explore My Work
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Button>
           <Button
-            onClick={scrollToAbout}
+            onClick={scrollToContact}
             variant="outline"
             className="group px-8 py-6 text-sm uppercase tracking-wider border-dark-foreground/20 text-dark-foreground hover:bg-dark-foreground/5 hover:border-dark-foreground/40"
           >
-            Learn More
+            Get In Touch
           </Button>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-foreground/40 hover:text-primary transition-colors"
-        aria-label="Scroll down"
-      >
-        <span className="text-xs uppercase tracking-widest">Scroll</span>
-        <ChevronDown className="h-5 w-5 animate-bounce-subtle" />
-      </button>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-foreground/30">
+        <div className="w-px h-16 bg-gradient-to-b from-dark-foreground/30 to-transparent animate-pulse" />
+      </div>
     </section>
   );
 };
