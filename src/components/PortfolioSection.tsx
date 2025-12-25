@@ -3,7 +3,7 @@ import { ArrowUpRight, ArrowRight, Play, Briefcase, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Lightbox } from "@/components/Lightbox";
 import portfolio1 from "@/assets/portfolio-1.jpg";
-import portfolio2 from "@/assets/portfolio-2.jpg";
+import yvpGame from "@/assets/yvp-game.png";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 
 const portfolioItems = [
@@ -14,14 +14,16 @@ const portfolioItems = [
     image: portfolio1,
     icon: Film,
     size: "normal",
+    link: null,
   },
   {
     id: 2,
     title: "Your Village People",
-    category: "Film",
-    image: portfolio2,
+    category: "Card Game",
+    image: yvpGame,
     icon: Play,
     size: "normal",
+    link: "https://www.kickstarter.com/projects/yvpgame/your-village-people-card-game",
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ const portfolioItems = [
     image: portfolio3,
     icon: Briefcase,
     size: "normal",
+    link: null,
   },
 ];
 
@@ -123,7 +126,13 @@ export const PortfolioSection = () => {
                 style={{ transitionDelay: `${index * 100}ms` }}
                 onMouseEnter={() => setHoveredItem(item.id)}
                 onMouseLeave={() => setHoveredItem(null)}
-                onClick={() => openLightbox(index)}
+                onClick={() => {
+                  if (item.link) {
+                    window.open(item.link, "_blank", "noopener,noreferrer");
+                  } else {
+                    openLightbox(index);
+                  }
+                }}
               >
                 <div className="relative aspect-[4/5] overflow-hidden bg-dark-foreground/5 border border-dark-foreground/10">
                   {/* Placeholder Icon */}
