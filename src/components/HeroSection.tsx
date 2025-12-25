@@ -1,15 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portfolio1 from "@/assets/portfolio-1.jpg";
-import portfolio2 from "@/assets/portfolio-2.jpg";
-import portfolio3 from "@/assets/portfolio-3.jpg";
-
-const floatingImages = [
-  { src: portfolio1, position: "left-[5%] top-[15%]", size: "w-32 h-40 md:w-40 md:h-52", delay: "0s", rotate: "-12deg" },
-  { src: portfolio2, position: "right-[8%] top-[20%]", size: "w-36 h-28 md:w-48 md:h-36", delay: "0.5s", rotate: "8deg" },
-  { src: portfolio3, position: "left-[10%] bottom-[15%]", size: "w-28 h-28 md:w-36 md:h-36", delay: "1s", rotate: "15deg" },
-];
 
 export const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -55,26 +46,6 @@ export const HeroSection = () => {
         }}
       />
 
-      {/* Floating Images */}
-      {floatingImages.map((img, index) => (
-        <div
-          key={index}
-          className={`absolute ${img.position} ${img.size} float opacity-0 animate-fade-in hidden lg:block`}
-          style={{ 
-            animationDelay: img.delay,
-            transform: `rotate(${img.rotate}) translate(${mousePosition.x * (index + 1)}px, ${mousePosition.y * (index + 1)}px)`,
-            transition: 'transform 0.3s ease-out',
-          }}
-        >
-          <div className="card-3d h-full w-full overflow-hidden border border-dark-foreground/10 shadow-2xl">
-            <img
-              src={img.src}
-              alt="Portfolio preview"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-      ))}
 
       {/* Decorative circles */}
       <div className="absolute top-20 right-[20%] w-64 h-64 rounded-full border border-dark-foreground/5 animate-rotate-slow" />
