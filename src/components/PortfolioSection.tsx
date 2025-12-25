@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { ArrowUpRight, ArrowRight, Play, Briefcase, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Lightbox } from "@/components/Lightbox";
-import portfolio1 from "@/assets/portfolio-1.jpg";
+import oneChanceGame from "@/assets/one-chance-game.png";
 import yvpGame from "@/assets/yvp-game.png";
 import bfLogoFull from "@/assets/bf-logo-full.png";
 
@@ -10,11 +10,11 @@ const portfolioItems = [
   {
     id: 1,
     title: "One Chance",
-    category: "Game",
-    image: portfolio1,
+    category: "Board Game",
+    image: oneChanceGame,
     icon: Film,
     size: "normal",
-    link: null,
+    link: "https://instagram.com/onechancegame",
   },
   {
     id: 2,
