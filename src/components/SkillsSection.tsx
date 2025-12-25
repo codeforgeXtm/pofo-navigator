@@ -47,6 +47,7 @@ export const SkillsSection = () => {
 
   return (
     <section
+      id="skills"
       ref={sectionRef}
       className="relative py-32 md:py-40 bg-dark overflow-hidden"
     >

@@ -110,7 +110,7 @@ export const PortfolioSection = () => {
               <Button
                 onClick={scrollToContact}
                 variant="outline"
-                className="px-6 py-5 text-sm uppercase tracking-wider border-dark-foreground/20 text-dark-foreground hover:bg-dark-foreground/5"
+                className="px-6 py-5 text-sm uppercase tracking-wider border-primary/50 text-dark-foreground bg-transparent hover:bg-primary/10 hover:border-primary"
               >
                 Get In Touch
               </Button>

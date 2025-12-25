@@ -111,7 +111,7 @@ export const HeroSection = () => {
           <Button
             onClick={scrollToContact}
             variant="outline"
-            className="group px-8 py-6 text-sm uppercase tracking-wider border-dark-foreground/20 text-dark-foreground hover:bg-dark-foreground/5 hover:border-dark-foreground/40"
+            className="group px-8 py-6 text-sm uppercase tracking-wider border-primary/50 text-dark-foreground bg-transparent hover:bg-primary/10 hover:border-primary"
           >
             Get In Touch
           </Button>
