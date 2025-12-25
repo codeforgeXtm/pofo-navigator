@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Lightbox } from "@/components/Lightbox";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import yvpGame from "@/assets/yvp-game.png";
-import portfolio3 from "@/assets/portfolio-3.jpg";
+import bfLogoFull from "@/assets/bf-logo-full.png";
 
 const portfolioItems = [
   {
@@ -28,11 +28,12 @@ const portfolioItems = [
   {
     id: 3,
     title: "Consulting",
-    category: "Consult",
-    image: portfolio3,
+    category: "Strategy & Brand",
+    image: bfLogoFull,
     icon: Briefcase,
     size: "normal",
     link: null,
+    isLogo: true,
   },
 ];
 
@@ -134,21 +135,27 @@ export const PortfolioSection = () => {
                   }
                 }}
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-dark-foreground/5 border border-dark-foreground/10">
+                <div className={`relative aspect-[4/5] overflow-hidden border border-dark-foreground/10 ${
+                  (item as any).isLogo ? "bg-dark flex items-center justify-center" : "bg-dark-foreground/5"
+                }`}>
                   {/* Image - always visible */}
                   <img
                     src={item.image}
                     alt={item.title}
-                    className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
-                      hoveredItem === item.id ? "scale-110" : "scale-100"
+                    className={`transition-all duration-700 ${
+                      (item as any).isLogo 
+                        ? `w-2/3 h-auto object-contain ${hoveredItem === item.id ? "scale-110" : "scale-100"}`
+                        : `absolute inset-0 h-full w-full object-cover ${hoveredItem === item.id ? "scale-110" : "scale-100"}`
                     }`}
                     loading="lazy"
                   />
                   
-                  {/* Overlay on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent transition-opacity duration-500 ${
-                    hoveredItem === item.id ? "opacity-100" : "opacity-40"
-                  }`} />
+                  {/* Overlay on hover - only for non-logo items */}
+                  {!(item as any).isLogo && (
+                    <div className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent transition-opacity duration-500 ${
+                      hoveredItem === item.id ? "opacity-100" : "opacity-40"
+                    }`} />
+                  )}
                   
                   {/* Arrow */}
                   <div className={`absolute top-4 right-4 h-10 w-10 flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
