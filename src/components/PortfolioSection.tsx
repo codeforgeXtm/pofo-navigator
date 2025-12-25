@@ -10,7 +10,7 @@ const portfolioItems = [
   {
     id: 1,
     title: "One Chance",
-    category: "Film",
+    category: "Game",
     image: portfolio1,
     icon: Film,
     size: "normal",
@@ -135,26 +135,19 @@ export const PortfolioSection = () => {
                 }}
               >
                 <div className="relative aspect-[4/5] overflow-hidden bg-dark-foreground/5 border border-dark-foreground/10">
-                  {/* Placeholder Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <item.icon className={`h-16 w-16 text-dark-foreground/20 transition-all duration-500 ${
-                      hoveredItem === item.id ? "scale-110 text-primary/40" : ""
-                    }`} />
-                  </div>
-                  
-                  {/* Image on hover */}
+                  {/* Image - always visible */}
                   <img
                     src={item.image}
                     alt={item.title}
                     className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
-                      hoveredItem === item.id ? "opacity-100 scale-105" : "opacity-0 scale-100"
+                      hoveredItem === item.id ? "scale-110" : "scale-100"
                     }`}
                     loading="lazy"
                   />
                   
-                  {/* Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent transition-opacity duration-500 ${
-                    hoveredItem === item.id ? "opacity-100" : "opacity-0"
+                  {/* Overlay on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent transition-opacity duration-500 ${
+                    hoveredItem === item.id ? "opacity-100" : "opacity-40"
                   }`} />
                   
                   {/* Arrow */}
