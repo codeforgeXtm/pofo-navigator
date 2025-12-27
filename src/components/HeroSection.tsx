@@ -17,11 +17,10 @@ export const HeroSection = () => {
       />
 
       {/* Content - positioned at top */}
-      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto pt-16 sm:pt-20 lg:pt-24">
-        {/* Main Heading */}
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.2] mb-4 text-dark opacity-0 animate-fade-in animation-delay-100">
-          Building Things That Inspire and Move People.
-        </h1>
+      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto pt-16 sm:pt-20 lg:pt-24">
+  <h1 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.2] mb-4 text-dark opacity-0 animate-fade-in animation-delay-100 whitespace-nowrap">
+    Building Things That Inspire and Move People.
+  </h1>
 
         {/* Subtitle */}
         <p className="font-display text-white text-base sm:text-lg md:text-xl font-bold opacity-0 animate-fade-in animation-delay-300">
