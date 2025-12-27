@@ -181,18 +181,8 @@ export const VerticalSidebar = () => {
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col gap-3 lg:gap-5">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="text-sidebar-foreground transition-all duration-300 hover:text-primary hover:scale-110"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-3.5 w-3.5 lg:h-4 lg:w-4" />
-                  </a>
-                ))}
-              </div>
+              /* Hide social links when collapsed for transparent look */
+              null
             )}
           </div>
         </div>
