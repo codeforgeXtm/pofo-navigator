@@ -24,7 +24,7 @@ export const HeroSection = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-white text-base sm:text-lg md:text-xl opacity-0 animate-fade-in animation-delay-300">
+        <p className="font-display text-white text-base sm:text-lg md:text-xl font-bold opacity-0 animate-fade-in animation-delay-300">
           Babafemi — creator, strategist, and founder.
         </p>
       </div>
