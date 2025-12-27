@@ -8,12 +8,15 @@ export const HeroSection = () => {
     <section
       ref={heroRef}
       id="home"
-      className="relative min-h-screen flex items-start justify-center overflow-hidden"
+      className="relative min-h-[140vh] flex items-start justify-center overflow-hidden"
     >
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-no-repeat bg-center bg-contain md:bg-[length:auto_100%] lg:bg-[length:auto_100%]"
-        style={{ backgroundImage: `url(${heroDesertBg})` }}
+        className="absolute inset-0 bg-cover bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(${heroDesertBg})`,
+          backgroundPosition: 'center 70%' 
+        }}
       />
       
       {/* Content - positioned at top */}
