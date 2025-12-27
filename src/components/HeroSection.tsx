@@ -12,7 +12,7 @@ export const HeroSection = () => {
     >
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-no-repeat bg-center"
+        className="absolute inset-0 bg-no-repeat bg-center bg-contain md:bg-[length:auto_100%] lg:bg-[length:auto_100%]"
         style={{ backgroundImage: `url(${heroDesertBg})` }}
       />
       
