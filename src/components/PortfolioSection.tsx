@@ -127,7 +127,7 @@ export const PortfolioSection = () => {
                   }
                 }}
               >
-                <div className={`relative aspect-[4/5] overflow-hidden border border-dark-foreground/10 ${
+                <div className={`relative aspect-[4/5] overflow-hidden rounded-3xl border border-dark-foreground/10 ${
                   (item as any).isLogo ? "bg-dark flex items-center justify-center" : "bg-dark-foreground/5"
                 }`}>
                   {/* Image - always visible */}
@@ -150,7 +150,7 @@ export const PortfolioSection = () => {
                   )}
                   
                   {/* Arrow */}
-                  <div className={`absolute top-4 right-4 h-10 w-10 flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
+                  <div className={`absolute top-4 right-4 h-10 w-10 rounded-full flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
                     hoveredItem === item.id ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
                   }`}>
                     <ArrowUpRight className="h-4 w-4 text-dark-foreground" />
