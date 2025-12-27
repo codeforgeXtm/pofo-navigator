@@ -51,7 +51,7 @@ export const VerticalSidebar = () => {
         ref={sidebarRef}
         className={cn(
           "fixed left-0 top-0 z-50 h-screen bg-sidebar border-r border-sidebar-border transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]",
-          isOpen ? "w-80" : "w-14 lg:w-20"
+          isOpen ? "w-80" : "w-10 sm:w-12 lg:w-20"
         )}
       >
         {/* Hover glow effect */}
@@ -60,7 +60,7 @@ export const VerticalSidebar = () => {
           style={{ top: `${mouseY - 64}px` }}
         />
 
-        <div className="relative flex h-full flex-col justify-between py-6 lg:py-8">
+        <div className="relative flex h-full flex-col justify-between py-5 lg:py-8">
           {/* Header - Logo/Close Button */}
           <div className="flex flex-col items-center">
             {isOpen ? (
@@ -84,13 +84,13 @@ export const VerticalSidebar = () => {
               /* Collapsed state: just the icon logo */
               <button
                 onClick={() => setIsOpen(true)}
-                className="group relative flex h-10 w-10 lg:h-14 lg:w-14 items-center justify-center transition-all duration-300 hover:scale-105"
+                className="group relative flex h-8 w-8 lg:h-14 lg:w-14 items-center justify-center transition-all duration-300 hover:scale-105"
                 aria-label="Open menu"
               >
                 <img 
                   src={bfLogoIcon} 
                   alt="BF Logo" 
-                  className="h-8 w-8 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="h-6 w-6 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </button>
             )}
@@ -156,7 +156,7 @@ export const VerticalSidebar = () => {
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col gap-4 lg:gap-5">
+              <div className="flex flex-col gap-3 lg:gap-5">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
@@ -164,7 +164,7 @@ export const VerticalSidebar = () => {
                     className="text-sidebar-foreground transition-all duration-300 hover:text-primary hover:scale-110"
                     aria-label={social.label}
                   >
-                    <social.icon className="h-4 w-4" />
+                    <social.icon className="h-3.5 w-3.5 lg:h-4 lg:w-4" />
                   </a>
                 ))}
               </div>
