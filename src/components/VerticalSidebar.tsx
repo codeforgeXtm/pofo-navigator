@@ -70,20 +70,16 @@ export const VerticalSidebar = () => {
       <aside
         ref={sidebarRef}
         className={cn(
-          "fixed left-0 top-0 z-50 h-screen transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]",
-          isOpen 
-            ? "w-80 bg-sidebar border-r border-sidebar-border" 
-            : "w-10 sm:w-12 lg:w-20 bg-transparent border-r-0",
+          "fixed left-0 top-0 z-50 h-screen bg-sidebar border-r border-sidebar-border transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]",
+          isOpen ? "w-80" : "w-10 sm:w-12 lg:w-20",
           isHidden && !isOpen ? "-translate-x-full lg:translate-x-0" : "translate-x-0"
         )}
       >
-        {/* Hover glow effect - only when open */}
-        {isOpen && (
-          <div 
-            className="absolute left-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none transition-all duration-300 opacity-50"
-            style={{ top: `${mouseY - 64}px` }}
-          />
-        )}
+        {/* Hover glow effect */}
+        <div 
+          className="absolute left-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none transition-all duration-300 opacity-50"
+          style={{ top: `${mouseY - 64}px` }}
+        />
 
         <div className="relative flex h-full flex-col justify-between py-5 lg:py-8">
           {/* Header - Logo/Close Button */}
@@ -181,8 +177,18 @@ export const VerticalSidebar = () => {
                 ))}
               </div>
             ) : (
-              /* Hide social links when collapsed for transparent look */
-              null
+              <div className="flex flex-col gap-3 lg:gap-5">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    className="text-sidebar-foreground transition-all duration-300 hover:text-primary hover:scale-110"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-3.5 w-3.5 lg:h-4 lg:w-4" />
+                  </a>
+                ))}
+              </div>
             )}
           </div>
         </div>
