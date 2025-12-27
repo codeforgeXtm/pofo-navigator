@@ -1,16 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { X, Instagram, Twitter } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
 import bfLogoText from "@/assets/bf-logo-text.png";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#portfolio" },
-  { label: "Updates", href: "#updates" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Skills", href: "/skills" },
+  { label: "Work", href: "/work" },
+  { label: "Updates", href: "/updates" },
 ];
 
 const socialLinks = [
@@ -20,27 +21,11 @@ const socialLinks = [
 
 export const VerticalSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
   const [mouseY, setMouseY] = useState(0);
   const sidebarRef = useRef<HTMLElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.replace("#", ""));
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
     const handleMouseMove = (e: MouseEvent) => {
       if (sidebarRef.current) {
         const rect = sidebarRef.current.getBoundingClientRect();
@@ -48,25 +33,16 @@ export const VerticalSidebar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
-  const handleNavClick = (href: string) => {
+  // Close sidebar on route change
+  useEffect(() => {
     setIsOpen(false);
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToContact = () => {
-    setIsOpen(false);
-    const element = document.getElementById("contact");
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
+  }, [location.pathname]);
 
   return (
     <>
@@ -75,7 +51,7 @@ export const VerticalSidebar = () => {
         ref={sidebarRef}
         className={cn(
           "fixed left-0 top-0 z-50 h-screen bg-sidebar border-r border-sidebar-border transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]",
-          isOpen ? "w-80" : "w-20"
+          isOpen ? "w-80" : "w-14 lg:w-20"
         )}
       >
         {/* Hover glow effect */}
@@ -84,7 +60,7 @@ export const VerticalSidebar = () => {
           style={{ top: `${mouseY - 64}px` }}
         />
 
-        <div className="relative flex h-full flex-col justify-between py-8">
+        <div className="relative flex h-full flex-col justify-between py-6 lg:py-8">
           {/* Header - Logo/Close Button */}
           <div className="flex flex-col items-center">
             {isOpen ? (
@@ -108,13 +84,13 @@ export const VerticalSidebar = () => {
               /* Collapsed state: just the icon logo */
               <button
                 onClick={() => setIsOpen(true)}
-                className="group relative flex h-14 w-14 items-center justify-center transition-all duration-300 hover:scale-105"
+                className="group relative flex h-10 w-10 lg:h-14 lg:w-14 items-center justify-center transition-all duration-300 hover:scale-105"
                 aria-label="Open menu"
               >
                 <img 
                   src={bfLogoIcon} 
                   alt="BF Logo" 
-                  className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                  className="h-8 w-8 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </button>
             )}
@@ -135,17 +111,17 @@ export const VerticalSidebar = () => {
                     isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
                   )}
                 >
-                  <button
-                    onClick={() => handleNavClick(item.href)}
+                  <Link
+                    to={item.href}
                     className={cn(
                       "group relative text-base font-normal tracking-wide transition-colors",
-                      activeSection === item.href.replace("#", "")
+                      location.pathname === item.href
                         ? "text-dark-foreground"
                         : "text-sidebar-foreground hover:text-dark-foreground"
                     )}
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -156,16 +132,16 @@ export const VerticalSidebar = () => {
               isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
             )}>
               <Button
-                onClick={scrollToContact}
+                asChild
                 className="bg-foreground hover:bg-foreground/90 text-background px-6 py-5 text-sm uppercase tracking-wider"
               >
-                Contact
+                <Link to="/contact">Contact</Link>
               </Button>
             </div>
           </nav>
 
           {/* Social Links */}
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-4 lg:gap-6">
             {isOpen ? (
               <div className="flex gap-6 animate-fade-in">
                 {socialLinks.map((social) => (
@@ -180,7 +156,7 @@ export const VerticalSidebar = () => {
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-4 lg:gap-5">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
