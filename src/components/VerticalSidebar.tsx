@@ -22,7 +22,9 @@ const socialLinks = [
 export const VerticalSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mouseY, setMouseY] = useState(0);
+  const [isHidden, setIsHidden] = useState(false);
   const sidebarRef = useRef<HTMLElement>(null);
+  const lastScrollY = useRef(0);
   const location = useLocation();
 
   useEffect(() => {
@@ -33,15 +35,33 @@ export const VerticalSidebar = () => {
       }
     };
 
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isMobile = window.innerWidth < 1024;
+      
+      if (isMobile && !isOpen) {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+          setIsHidden(true);
+        } else {
+          setIsHidden(false);
+        }
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isOpen]);
 
   // Close sidebar on route change
   useEffect(() => {
     setIsOpen(false);
+    setIsHidden(false);
   }, [location.pathname]);
 
   return (
@@ -50,8 +70,9 @@ export const VerticalSidebar = () => {
       <aside
         ref={sidebarRef}
         className={cn(
-          "fixed left-0 top-0 z-50 h-screen bg-sidebar border-r border-sidebar-border transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]",
-          isOpen ? "w-80" : "w-10 sm:w-12 lg:w-20"
+          "fixed left-0 top-0 z-50 h-screen bg-sidebar border-r border-sidebar-border transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]",
+          isOpen ? "w-80" : "w-10 sm:w-12 lg:w-20",
+          isHidden && !isOpen ? "-translate-x-full lg:translate-x-0" : "translate-x-0"
         )}
       >
         {/* Hover glow effect */}
