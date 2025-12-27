@@ -1,20 +1,17 @@
 import { VerticalSidebar } from "@/components/VerticalSidebar";
-import { HeroSection } from "@/components/HeroSection";
+import NewsletterSection from "@/components/NewsletterSection";
 import { Footer } from "@/components/Footer";
 
-const Index = () => {
+const Updates = () => {
   return (
     <div className="min-h-screen bg-dark">
-      {/* Vertical Sidebar Navigation */}
       <VerticalSidebar />
-
-      {/* Main Content - offset for sidebar */}
       <main className="ml-14 lg:ml-20">
-        <HeroSection />
+        <NewsletterSection />
         <Footer />
       </main>
     </div>
   );
 };
 
-export default Index;
+export default Updates;
