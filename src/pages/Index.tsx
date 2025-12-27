@@ -9,7 +9,7 @@ const Index = () => {
       <VerticalSidebar />
 
       {/* Main Content - offset for sidebar */}
-      <main className="ml-14 lg:ml-20">
+      <main className="ml-10 sm:ml-12 lg:ml-20">
         <HeroSection />
         <Footer />
       </main>
