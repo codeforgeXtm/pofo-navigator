@@ -26,20 +26,19 @@ export const AboutSection = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-32 md:py-40 bg-background overflow-hidden"
+      className="relative py-32 md:py-40 bg-dark overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-dark to-transparent" />
       <div className="absolute -top-20 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container max-w-4xl px-6 relative">
         {/* My Creative Journey */}
         <div className="mb-20">
-          <h2 className="reveal font-display text-3xl md:text-4xl font-normal mb-8 text-foreground">
+          <h2 className="reveal font-display text-3xl md:text-4xl font-normal mb-8 text-dark-foreground">
             My Creative Journey
           </h2>
           
-          <div className="space-y-6 text-foreground/70 leading-relaxed">
+          <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
             <p className="reveal">
               From Lagos to the world, I've always felt driven by a relentless urge to invent, 
               connect, and make each idea count. My journey has spanned the lines of creator, 
@@ -64,12 +63,12 @@ export const AboutSection = () => {
         </div>
 
         {/* Values */}
-        <div className="mb-20 pt-12 border-t border-border">
-          <h3 className="reveal font-display text-2xl md:text-3xl font-normal mb-8 text-foreground">
+        <div className="mb-20 pt-12 border-t border-dark-foreground/10">
+          <h3 className="reveal font-display text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
             Values That Power Everything
           </h3>
           
-          <p className="reveal text-foreground/70 leading-relaxed">
+          <p className="reveal text-dark-foreground/70 leading-relaxed">
             Innovation means daring to see things differently. Honesty grounds every 
             story and project in integrity. Simplicity cuts through the noise and sharpens 
             focus. Community is how I thrive—real people, real connections, real progress.
@@ -77,12 +76,12 @@ export const AboutSection = () => {
         </div>
 
         {/* Living Boldly */}
-        <div className="pt-12 border-t border-border">
-          <h3 className="reveal font-display text-2xl md:text-3xl font-normal mb-8 text-foreground">
+        <div className="pt-12 border-t border-dark-foreground/10">
+          <h3 className="reveal font-display text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
             Living Boldly, Creatively, Human
           </h3>
           
-          <div className="space-y-6 text-foreground/70 leading-relaxed">
+          <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
             <p className="reveal">
               Between reinventing new ventures and creative breaks, I find inspiration in film, music, 
               conversation, and movement. My lifestyle is grounded in late-night brainstorms, 
