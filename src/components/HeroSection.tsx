@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroDesertBg from "@/assets/hero-desert.jpg";
 
 export const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -35,8 +36,16 @@ export const HeroSection = () => {
     <section
       ref={heroRef}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark"
+      className="relative min-h-[120vh] flex items-center justify-center overflow-hidden"
     >
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroDesertBg})` }}
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-dark/30" />
+
       {/* Cursor follow glow */}
       <div 
         className="cursor-glow hidden md:block"
@@ -46,25 +55,20 @@ export const HeroSection = () => {
         }}
       />
 
-
-      {/* Decorative circles */}
-      <div className="absolute top-20 right-[20%] w-64 h-64 rounded-full border border-dark-foreground/5 animate-rotate-slow" />
-      <div className="absolute bottom-32 left-[15%] w-96 h-96 rounded-full border border-primary/10 animate-rotate-slow" style={{ animationDirection: 'reverse' }} />
-
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Main Heading */}
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6">
-          <span className="block opacity-0 animate-fade-in animation-delay-100 text-dark-foreground">
+          <span className="block opacity-0 animate-fade-in animation-delay-100 text-white">
             Building Things That Inspire,
           </span>
-          <span className="block opacity-0 animate-fade-in animation-delay-200 text-dark-foreground">
+          <span className="block opacity-0 animate-fade-in animation-delay-200 text-white">
             and <span className="italic text-gradient">Move People.</span>
           </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="max-w-2xl mx-auto text-dark-foreground/60 text-lg md:text-xl mb-12 opacity-0 animate-fade-in animation-delay-300">
+        <p className="max-w-2xl mx-auto text-white/80 text-lg md:text-xl mb-12 opacity-0 animate-fade-in animation-delay-300">
           Babafemi Fagbemi — creator, strategist, founder.
         </p>
 
@@ -82,7 +86,7 @@ export const HeroSection = () => {
           <Button
             onClick={scrollToContact}
             variant="outline"
-            className="group px-8 py-6 text-sm uppercase tracking-wider border-primary/50 text-dark-foreground bg-transparent hover:bg-primary/10 hover:border-primary"
+            className="group px-8 py-6 text-sm uppercase tracking-wider border-white/50 text-white bg-transparent hover:bg-white/10 hover:border-white"
           >
             Get In Touch
           </Button>
@@ -90,8 +94,8 @@ export const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-dark-foreground/30">
-        <div className="w-px h-16 bg-gradient-to-b from-dark-foreground/30 to-transparent animate-pulse" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50">
+        <div className="w-px h-16 bg-gradient-to-b from-white/50 to-transparent animate-pulse" />
       </div>
     </section>
   );
