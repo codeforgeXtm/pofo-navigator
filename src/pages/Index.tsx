@@ -4,15 +4,15 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-dark">
-      {/* Vertical Sidebar Navigation */}
+    <div className="relative min-h-screen w-full overflow-hidden">
+      {/* Fullscreen Hero Background */}
+      <HeroSection />
+      
+      {/* Transparent Sidebar overlaid on image */}
       <VerticalSidebar />
-
-      {/* Main Content - offset for sidebar */}
-      <main className="ml-10 sm:ml-12 lg:ml-20">
-        <HeroSection />
-        <Footer />
-      </main>
+      
+      {/* Footer overlaid at bottom */}
+      <Footer isTransparent />
     </div>
   );
 };

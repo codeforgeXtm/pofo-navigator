@@ -1,5 +1,6 @@
 import { Instagram, Twitter, Linkedin, ArrowUp } from "lucide-react";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
+import { cn } from "@/lib/utils";
 
 const footerLinks = {
   explore: [
@@ -23,7 +24,11 @@ const footerLinks = {
   ],
 };
 
-export const Footer = () => {
+interface FooterProps {
+  isTransparent?: boolean;
+}
+
+export const Footer = ({ isTransparent = false }: FooterProps) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -34,6 +39,35 @@ export const Footer = () => {
       element?.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Transparent minimal footer for homepage
+  if (isTransparent) {
+    return (
+      <footer className="fixed bottom-0 left-0 right-0 z-40 py-4 px-6">
+        <div className="flex items-center justify-between ml-10 sm:ml-12 lg:ml-20">
+          <p className="text-xs text-white/60">
+            © {new Date().getFullYear()} Babafemi Fagbemi
+          </p>
+          <div className="flex gap-4">
+            <a
+              href="https://instagram.com/justbabafemi"
+              className="text-white/60 hover:text-white transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a
+              href="https://twitter.com/justbabafemi"
+              className="text-white/60 hover:text-white transition-colors"
+              aria-label="Twitter"
+            >
+              <Twitter className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    );
+  }
 
   return (
     <footer className="bg-dark border-t border-dark-foreground/10 py-16">
