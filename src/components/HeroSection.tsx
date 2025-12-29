@@ -4,13 +4,13 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen"
+      className="relative w-full"
     >
-      {/* Background Image - covers viewport without stretching */}
+      {/* Background Image - maintains aspect ratio */}
       <img 
         src={heroDesertBg}
         alt="Desert landscape"
-        className="absolute inset-0 w-full h-full object-cover object-top"
+        className="w-full h-auto object-contain"
       />
       
       {/* Content - positioned absolutely over the image */}
