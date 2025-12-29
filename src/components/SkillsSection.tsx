@@ -1,25 +1,30 @@
 import { useEffect, useRef, useState } from "react";
+import { Compass, Rocket, Sparkles, Clapperboard } from "lucide-react";
 
 const skills = [
   {
     number: "01",
     title: "Strategic Brand Development",
     description: "I help ideas find their voice. From positioning to identity, I build brands that feel intentional, human, and built to last.",
+    icon: Compass,
   },
   {
     number: "02",
     title: "Business, Product & Venture Building",
     description: "I don't stop at concepts. I build, manufacture, and launch real products (games, physical experiences, and ventures) turning ideas into things people can hold, play, use, and pay for.",
+    icon: Rocket,
   },
   {
     number: "03",
     title: "Creative Direction",
     description: "I lead with vision and exquisite taste, bringing teams together, setting the bar high, and guiding projects from rough idea to polished execution.",
+    icon: Sparkles,
   },
   {
     number: "04",
     title: "Film & Visual Storytelling",
     description: "I tell stories visually and everywhere, directing films and content that connect emotionally, communicate clearly, and leave an impression long after.",
+    icon: Clapperboard,
   },
 ];
 
@@ -91,6 +96,12 @@ export const SkillsSection = () => {
 
                 {/* Content */}
                 <div className="relative z-10">
+                  <skill.icon 
+                    className={`w-8 h-8 mb-4 transition-colors duration-500 ${
+                      hoveredIndex === index ? "text-primary" : "text-dark-foreground/40"
+                    }`} 
+                    strokeWidth={1.5}
+                  />
                   <h3 className="font-display text-xl lg:text-2xl font-normal text-dark-foreground mb-4 pr-16">
                     {skill.title}
                   </h3>
