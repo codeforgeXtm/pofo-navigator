@@ -1,4 +1,4 @@
-import heroDesertBg from "@/assets/hero-desert.jpg";
+import heroDesertBg from "@/assets/hero-bg-new.png";
 
 export const HeroSection = () => {
   return (
