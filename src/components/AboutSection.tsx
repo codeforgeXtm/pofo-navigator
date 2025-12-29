@@ -49,19 +49,19 @@ export const AboutSection = () => {
           
           <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
             <p className="reveal">
-              From Lagos to the world, I've always felt driven by a relentless urge to invent, 
-              connect, and make each idea count. My journey has spanned the lines of creator, 
-              strategist, and founder, fueled by a belief in the power of storytelling and originality.
+              From a young age, I was captivated by storytelling and the power of ideas and what they could become. My creative journey began exploring games, storytelling, music, art, and business, always striving to fuse emotion and innovation in everything I build.
             </p>
             <p className="reveal">
-              Every project, from film to consulting, is a chapter in my pursuit of innovation—
-              where creativity hits hard, stays personal, and resonates deeply. Bold choices, 
-              honest direction, and a cinematic eye guide how I build, launch, and lead.
+              Through founding businesses, collaborating with diverse creators and exploring my many ideas, I've learned to value honesty, persistence, and the courage to experiment. Each project has deepened my craft and my curiosity, teaching me the art of meaningful impact.
             </p>
             <p className="reveal">
-              This isn't just work. It's a lifestyle—one where simplicity breeds clarity, 
-              and community powers the vision. My brand is human at its core: 
-              alive, modern, and determined to create impact that moves people.
+              From creating original games, short stories, fonts, businesses and consulting, I have learnt to pour my entire being and drive for quality into everything I do.
+            </p>
+            <p className="reveal">
+              Today, I channel bold ideas into work that inspires, moves, and connects people. Whether I'm launching new ventures, creative consulting, or building a vibrant creative community or game, my mission remains the same.
+            </p>
+            <p className="reveal font-display text-dark-foreground text-xl">
+              To Build things that Inspire.
             </p>
           </div>
 
@@ -71,17 +71,20 @@ export const AboutSection = () => {
           </div>
         </div>
 
-        {/* Values */}
+        {/* A Life Designed Bold */}
         <div className="mb-20 pt-12 border-t border-dark-foreground/10">
           <h3 className="reveal font-display text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
-            Values That Power Everything
+            A Life Designed Bold
           </h3>
           
-          <p className="reveal text-dark-foreground/70 leading-relaxed">
-            Innovation means daring to see things differently. Honesty grounds every 
-            story and project in integrity. Simplicity cuts through the noise and sharpens 
-            focus. Community is how I thrive—real people, real connections, real progress.
-          </p>
+          <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
+            <p className="reveal">
+              Living between Lagos and London, I balance creative pursuits with family, adventure, and the search for beauty in the everyday. Cinematic moments, deep conversation, and shared ideas fuel my work and lifestyle.
+            </p>
+            <p className="reveal">
+              Obsessed with honest design and daring concepts, you'll find me sketching, reading about culture, or running cityscapes for new inspiration. My life is a canvas for bold expression. Inspiration for innovation lives all around me.
+            </p>
+          </div>
         </div>
 
         {/* Living Boldly */}
@@ -92,14 +95,13 @@ export const AboutSection = () => {
           
           <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
             <p className="reveal">
-              Between reinventing new ventures and creative breaks, I find inspiration in film, music, 
-              conversation, and movement. My lifestyle is grounded in late-night brainstorms, 
-              sun-lit meetings, and city walks that spark wild ideas and unexpected connections.
+              I live in the space between building things and stepping away from them. When I'm not inventing new ventures, I'm recharging through film, music, long conversations, and movement, anything that helps ideas breathe.
             </p>
             <p className="reveal">
-              Home is where laughter lives, dreams breathe, and ambition finds space 
-              to run. I bring the same energy to life as I do to every partnership—
-              minimal, bold, cinematic, with just the right accents to make it unforgettable.
+              My days are a mix of late-night brainstorms, mid day meetings, and long walks where the best ideas usually show up uninvited. I believe inspiration lives in motion, in people, and in paying attention.
+            </p>
+            <p className="reveal">
+              Home matters to me. It's where laughter is loud, dreams feel possible, and ambition has room to stretch. I carry that same energy into my work and my partnerships, intentional, bold, cinematic, and human. Clean at first glance, but always layered with details that stay with you.
             </p>
           </div>
 
