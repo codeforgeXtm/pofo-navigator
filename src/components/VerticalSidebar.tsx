@@ -13,6 +13,7 @@ const navItems = [
   { label: "Skills", href: "/skills" },
   { label: "Work", href: "/work" },
   { label: "Updates", href: "/updates" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
@@ -151,19 +152,6 @@ export const VerticalSidebar = ({ isWhite=false }) => {
                 </li>
               ))}
             </ul>
-
-            {/* Contact Button */}
-            <div className={cn(
-              "mt-8 transition-all duration-700",
-              isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
-            )}>
-              <Button
-                asChild
-                className="bg-foreground hover:bg-foreground/90 text-background px-6 py-5 text-sm uppercase tracking-wider"
-              >
-                <Link to="/contact">Contact</Link>
-              </Button>
-            </div>
           </nav>
 
           {/* Social Links */}
