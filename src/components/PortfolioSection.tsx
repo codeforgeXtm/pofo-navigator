@@ -1,39 +1,45 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { ArrowUpRight, ArrowRight, Play, Briefcase, Film } from "lucide-react";
+import { ArrowUpRight, Gamepad2, Briefcase, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Lightbox } from "@/components/Lightbox";
 import oneChanceGame from "@/assets/one-chance-game.png";
 import yvpGame from "@/assets/yvp-game.png";
 import bfLogoFull from "@/assets/bf-logo-full.png";
 
-const portfolioItems = [
+const ventures = [
   {
     id: 1,
-    title: "One Chance",
-    category: "Board Game",
-    image: oneChanceGame,
-    icon: Film,
-    size: "normal",
-    link: "https://instagram.com/onechancegame",
-  },
-  {
-    id: 2,
     title: "Your Village People",
     category: "Card Game",
+    description: "A wickedly fun card game for wicked people, being adapted into a full immersive world featuring comics, short films and feature length movies.",
     image: yvpGame,
-    icon: Play,
-    size: "normal",
+    icon: Gamepad2,
     link: "https://www.kickstarter.com/projects/yvpgame/your-village-people-card-game",
   },
   {
-    id: 3,
-    title: "Consulting",
-    category: "Strategy & Brand",
-    image: bfLogoFull,
+    id: 2,
+    title: "One Chance",
+    category: "Board Game",
+    description: "The most Lagosian board game ever. A fun immersive and chaotic experience that dove tails on life in Lagos, Nigeria and shows you just how fun it can be. Currently being adapted for mobile after selling 10,000 copies globally.",
+    image: oneChanceGame,
+    icon: Gamepad2,
+    link: "https://instagram.com/onechancegame",
+  },
+];
+
+const services = [
+  {
+    id: 1,
+    title: "Consulting & Creative Work",
+    description: "Helping brands and creators shape their businesses and products, develop powerful identities, and connect with audiences through honest, innovative consulting partnerships.",
     icon: Briefcase,
-    size: "normal",
-    link: null,
-    isLogo: true,
+  },
+  {
+    id: 2,
+    title: "Businesses & Investments",
+    description: "Setting up innovative businesses using first principles and investing in early stage startups while providing guidance and support through innovative thinking.",
+    icon: TrendingUp,
+    companies: ["Straight Edge Synergy Est 2014", "Divisions Africa Est 2019", "Blank Space Est 2025"],
   },
 ];
 
@@ -73,11 +79,11 @@ export const PortfolioSection = () => {
   };
 
   const goToNext = useCallback(() => {
-    setLightboxIndex((prev) => (prev + 1) % portfolioItems.length);
+    setLightboxIndex((prev) => (prev + 1) % ventures.length);
   }, []);
 
   const goToPrev = useCallback(() => {
-    setLightboxIndex((prev) => (prev - 1 + portfolioItems.length) % portfolioItems.length);
+    setLightboxIndex((prev) => (prev - 1 + ventures.length) % ventures.length);
   }, []);
 
   const scrollToContact = () => {
@@ -92,10 +98,10 @@ export const PortfolioSection = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="reveal font-display text-4xl sm:text-5xl md:text-6xl font-normal text-dark-foreground mb-4">
-              Ventures & Work.
+              Ventures that Define Creativity.
             </h2>
             <p className="reveal text-xl text-dark-foreground/50">
-              Bold projects shaping stories.
+              Bold ideas. Immersive Experiences. Real impact.
             </p>
 
             {/* CTA Button */}
@@ -110,9 +116,9 @@ export const PortfolioSection = () => {
             </div>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-            {portfolioItems.map((item, index) => (
+          {/* Ventures Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+            {ventures.map((item, index) => (
               <article
                 key={item.id}
                 className="reveal-scale group cursor-pointer"
@@ -127,27 +133,21 @@ export const PortfolioSection = () => {
                   }
                 }}
               >
-                <div className={`relative aspect-[4/5] overflow-hidden rounded-3xl border border-dark-foreground/10 ${
-                  (item as any).isLogo ? "bg-dark flex items-center justify-center" : "bg-dark-foreground/5"
-                }`}>
-                  {/* Image - always visible */}
+                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-dark-foreground/10 bg-dark-foreground/5">
+                  {/* Image */}
                   <img
                     src={item.image}
                     alt={item.title}
-                    className={`transition-all duration-700 ${
-                      (item as any).isLogo 
-                        ? `w-2/3 h-auto object-contain ${hoveredItem === item.id ? "scale-110" : "scale-100"}`
-                        : `absolute inset-0 h-full w-full object-cover ${hoveredItem === item.id ? "scale-110" : "scale-100"}`
+                    className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+                      hoveredItem === item.id ? "scale-110" : "scale-100"
                     }`}
                     loading="lazy"
                   />
                   
-                  {/* Overlay on hover - only for non-logo items */}
-                  {!(item as any).isLogo && (
-                    <div className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent transition-opacity duration-500 ${
-                      hoveredItem === item.id ? "opacity-100" : "opacity-40"
-                    }`} />
-                  )}
+                  {/* Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent transition-opacity duration-500 ${
+                    hoveredItem === item.id ? "opacity-100" : "opacity-60"
+                  }`} />
                   
                   {/* Arrow */}
                   <div className={`absolute top-4 right-4 h-10 w-10 rounded-full flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
@@ -155,19 +155,55 @@ export const PortfolioSection = () => {
                   }`}>
                     <ArrowUpRight className="h-4 w-4 text-dark-foreground" />
                   </div>
-                </div>
 
-                {/* Project Info */}
-                <div className="mt-4 text-center">
-                  <p className="text-xs uppercase tracking-wider text-dark-foreground/40 mb-1">
-                    {item.category}
-                  </p>
-                  <h3 className="font-display text-xl text-dark-foreground">
-                    {item.title}
-                  </h3>
+                  {/* Content overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p className="text-xs uppercase tracking-wider text-dark-foreground/60 mb-2">
+                      {item.category}
+                    </p>
+                    <h3 className="font-display text-2xl text-dark-foreground mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-dark-foreground/70 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </article>
             ))}
+          </div>
+
+          {/* Services Section */}
+          <div className="reveal pt-12 border-t border-dark-foreground/10 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {services.map((service, index) => (
+                <div 
+                  key={service.id}
+                  className="reveal p-8 rounded-2xl border border-dark-foreground/10 bg-dark-foreground/5"
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <service.icon className="w-8 h-8 text-primary/60 mb-4" strokeWidth={1.5} />
+                  <h3 className="font-display text-xl text-dark-foreground mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-dark-foreground/60 leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  {service.companies && (
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-dark-foreground/10">
+                      {service.companies.map((company) => (
+                        <span 
+                          key={company}
+                          className="text-xs text-dark-foreground/40 bg-dark-foreground/5 px-3 py-1 rounded-full"
+                        >
+                          {company}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Story Statement */}
@@ -186,7 +222,7 @@ export const PortfolioSection = () => {
 
       {/* Lightbox */}
       <Lightbox
-        images={portfolioItems}
+        images={ventures}
         currentIndex={lightboxIndex}
         isOpen={lightboxOpen}
         onClose={closeLightbox}
