@@ -34,11 +34,11 @@ export const AboutSection = () => {
 
       <div className="container max-w-4xl px-6 relative">
         {/* Profile Photo */}
-        <div className="reveal mb-16">
+        <div className="reveal mb-16 flex justify-center">
           <img 
             src={aboutPhoto} 
             alt="Profile" 
-            className="w-full max-w-md mx-auto rounded-lg object-cover"
+            className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover shadow-lg"
           />
         </div>
         {/* My Creative Journey */}
