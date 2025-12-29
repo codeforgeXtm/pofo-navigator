@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
+import aboutPhoto from "@/assets/about-photo.jpg";
 
 export const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -32,6 +33,14 @@ export const AboutSection = () => {
       <div className="absolute -top-20 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
 
       <div className="container max-w-4xl px-6 relative">
+        {/* Profile Photo */}
+        <div className="reveal mb-16">
+          <img 
+            src={aboutPhoto} 
+            alt="Profile" 
+            className="w-full max-w-md mx-auto rounded-lg object-cover"
+          />
+        </div>
         {/* My Creative Journey */}
         <div className="mb-20">
           <h2 className="reveal font-display text-3xl md:text-4xl font-normal mb-8 text-dark-foreground">
