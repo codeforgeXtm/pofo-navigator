@@ -10,7 +10,7 @@ export const HeroSection = () => {
       <img 
         src={heroDesertBg}
         alt="Desert landscape"
-        className="w-full h-[110vh] object-contain object-center bg-background"
+        className="w-full h-screen object-cover object-center"
       />
       
       {/* Content - positioned absolutely over the image */}
