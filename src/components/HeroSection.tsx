@@ -7,9 +7,10 @@ export const HeroSection = () => {
       className="fixed inset-0 w-full h-screen"
       style={{
         backgroundImage: `url(${heroDesertBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center bottom',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        backgroundColor: '#d4c4b0', // Match the desert sky color
       }}
     >
       {/* Content - positioned absolutely over the image */}
