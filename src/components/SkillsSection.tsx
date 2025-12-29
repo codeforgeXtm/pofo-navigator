@@ -4,22 +4,22 @@ const skills = [
   {
     number: "01",
     title: "Strategic Brand Development",
-    description: "Crafting cohesive brand identities that resonate deeply and stand the test of time.",
+    description: "I help ideas find their voice. From positioning to identity, I build brands that feel intentional, human, and built to last.",
   },
   {
     number: "02",
-    title: "Film & Visual Storytelling",
-    description: "Directing narratives that captivate, inspire, and leave lasting impressions.",
+    title: "Business, Product & Venture Building",
+    description: "I don't stop at concepts. I build, manufacture, and launch real products (games, physical experiences, and ventures) turning ideas into things people can hold, play, use, and pay for.",
   },
   {
     number: "03",
     title: "Creative Direction",
-    description: "Leading projects with vision, aligning teams around bold ideas and flawless execution.",
+    description: "I lead with vision and exquisite taste, bringing teams together, setting the bar high, and guiding projects from rough idea to polished execution.",
   },
   {
     number: "04",
-    title: "Business & Venture Building",
-    description: "Turning concepts into thriving ventures through innovation, strategy, and hustle.",
+    title: "Film & Visual Storytelling",
+    description: "I tell stories visually and everywhere, directing films and content that connect emotionally, communicate clearly, and leave an impression long after.",
   },
 ];
 
@@ -61,7 +61,7 @@ export const SkillsSection = () => {
             What I'm Great At
           </h2>
           <p className="skill-reveal skill-delay-1 text-dark-foreground/60 text-lg max-w-2xl mx-auto">
-            I specialize in turning complex challenges into elegant, meaningful experiences—blending strategic thinking with bold creativity.
+            I turn ideas into breathtaking experiences. Where strategy, creativity, and execution actually meet.
           </p>
         </div>
 
