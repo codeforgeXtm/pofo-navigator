@@ -30,15 +30,15 @@ export const AboutSection = () => {
       className="relative py-32 md:py-40 bg-dark overflow-hidden"
     >
       {/* Background decoration */}
-      <div className="absolute -top-20 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl" />
+      {/* <div className="absolute -top-20 right-0 w-[500px] h-[500px] border border-red-500 rounded-full bg-primary/5 blur-3xl" /> */}
 
-      <div className="container max-w-4xl px-6 relative">
+      <div className="container relative">
         {/* Profile Photo */}
-        <div className="reveal mb-16 flex justify-center">
+        <div className="w-full reveal mb-16 flex justify-center about-bg">
           <img 
             src={aboutPhoto} 
             alt="Profile" 
-            className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover shadow-lg"
+            className="w-full h-auto object-cover shadow-lg"
           />
         </div>
         {/* My Creative Journey */}

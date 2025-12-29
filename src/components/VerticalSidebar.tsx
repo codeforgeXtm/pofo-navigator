@@ -3,6 +3,7 @@ import { X, Instagram, Twitter } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
+import bfLogoIconWhite from "@/assets/bf-logo-icon-white.png";
 import bfLogoText from "@/assets/bf-logo-text.png";
 import { Button } from "@/components/ui/button";
 
@@ -19,7 +20,7 @@ const socialLinks = [
   { icon: Twitter, href: "https://twitter.com/justbabafemi", label: "Twitter" },
 ];
 
-export const VerticalSidebar = () => {
+export const VerticalSidebar = ({ isWhite=false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [mouseY, setMouseY] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
@@ -108,11 +109,15 @@ export const VerticalSidebar = () => {
                 className="group relative flex h-8 w-8 lg:h-14 lg:w-14 items-center justify-center transition-all duration-300 hover:scale-105"
                 aria-label="Open menu"
               >
-                <img 
+                {isWhite ? (<img 
+                  src={bfLogoIconWhite} 
+                  alt="BF Logo" 
+                  className="h-6 w-6 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                />) : (<img 
                   src={bfLogoIcon} 
                   alt="BF Logo" 
                   className="h-6 w-6 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
-                />
+                />)}
               </button>
             )}
           </div>

@@ -91,7 +91,7 @@ export const SkillsSection = () => {
                   className={`absolute top-6 right-6 font-display text-6xl lg:text-7xl font-light transition-all duration-500
                     ${hoveredIndex === index ? "text-primary/40" : "text-dark-foreground/10"}`}
                 >
-                  {skill.number}
+                  {/* {skill.number} */}
                 </span>
 
                 {/* Content */}

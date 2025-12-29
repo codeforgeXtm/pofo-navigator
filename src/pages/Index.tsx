@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen w-full">
       {/* Transparent Sidebar overlaid on image */}
-      <VerticalSidebar />
+      <VerticalSidebar isWhite />
       
       {/* Scrollable Hero */}
       <HeroSection />

@@ -320,3 +320,11 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.hero-bg {
+  background-image: url('./assets/hero-desert.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 40%;
+}
+

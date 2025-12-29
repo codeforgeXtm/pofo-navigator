@@ -1,12 +1,13 @@
 import { Instagram, Twitter, Linkedin, ArrowUp } from "lucide-react";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   explore: [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Work", href: "#portfolio" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Work", href: "/work" },
   ],
   connect: [
     { label: "Instagram", href: "https://instagram.com/justbabafemi" },
@@ -19,8 +20,8 @@ const footerLinks = {
   ],
   contact: [
     { label: "Email", href: "mailto:hello@babafemi.com" },
-    { label: "Newsletter", href: "#" },
-    { label: "Terms", href: "#" },
+    // { label: "Newsletter", href: "#" },
+    // { label: "Terms", href: "#" },
   ],
 };
 
@@ -34,10 +35,12 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
   };
 
   const handleNavClick = (href: string) => {
-    if (href.startsWith("#")) {
-      const element = document.querySelector(href);
-      element?.scrollIntoView({ behavior: "smooth" });
-    }
+    // if (href.startsWith("#")) {
+    //   const element = document.querySelector(href);
+    //   element?.scrollIntoView({ behavior: "smooth" });
+    // }
+    const element = document.querySelector(href);
+    element?.scrollIntoView({ behavior: "smooth" });
   };
 
   // Transparent minimal footer for homepage
@@ -48,7 +51,7 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
           <p className="text-xs text-white/60">
             © {new Date().getFullYear()} Babafemi Fagbemi
           </p>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <a
               href="https://instagram.com/justbabafemi"
               className="text-white/60 hover:text-white transition-colors"
@@ -63,7 +66,7 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
             >
               <Twitter className="h-4 w-4" />
             </a>
-          </div>
+          </div> */}
         </div>
       </footer>
     );
@@ -76,21 +79,28 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
           {/* Logo */}
           <div className="col-span-2 md:col-span-1">
-            <img src={bfLogoIcon} alt="BABAFEMI" className="h-10 w-10 object-contain" />
+            <img
+              src={bfLogoIcon}
+              alt="BABAFEMI"
+              className="h-10 w-10 object-contain"
+            />
           </div>
 
           {/* Explore */}
           <div>
-            <h4 className="text-sm font-medium text-dark-foreground mb-4">Explore</h4>
+            <h4 className="text-sm font-medium text-dark-foreground mb-4">
+              Explore
+            </h4>
             <ul className="space-y-2">
               {footerLinks.explore.map((link) => (
                 <li key={link.label}>
-                  <button
+                  {/* <button
                     onClick={() => handleNavClick(link.href)}
                     className="text-sm text-dark-foreground/50 hover:text-dark-foreground transition-colors"
                   >
                     {link.label}
-                  </button>
+                  </button> */}
+                  <Link to={link.href} className="text-sm text-dark-foreground/50 hover:text-dark-foreground transition-colors">{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -98,7 +108,9 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
 
           {/* Connect */}
           <div>
-            <h4 className="text-sm font-medium text-dark-foreground mb-4">Connect</h4>
+            <h4 className="text-sm font-medium text-dark-foreground mb-4">
+              Connect
+            </h4>
             <ul className="space-y-2">
               {footerLinks.connect.map((link) => (
                 <li key={link.label}>
@@ -115,7 +127,9 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
 
           {/* Film */}
           <div>
-            <h4 className="text-sm font-medium text-dark-foreground mb-4">Film</h4>
+            <h4 className="text-sm font-medium text-dark-foreground mb-4">
+              Film
+            </h4>
             <ul className="space-y-2">
               {footerLinks.film.map((link) => (
                 <li key={link.label}>
@@ -132,7 +146,9 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-medium text-dark-foreground mb-4">Contact</h4>
+            <h4 className="text-sm font-medium text-dark-foreground mb-4">
+              Contact
+            </h4>
             <ul className="space-y-2">
               {footerLinks.contact.map((link) => (
                 <li key={link.label}>
