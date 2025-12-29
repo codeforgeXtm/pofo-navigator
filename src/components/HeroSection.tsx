@@ -4,13 +4,13 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen"
+      className="relative w-full"
     >
-      {/* Background Image - full width, natural height for scrolling */}
+      {/* Background Image - constrained height for reasonable scroll */}
       <img 
         src={heroDesertBg}
         alt="Desert landscape"
-        className="w-full h-auto min-h-screen object-cover object-top"
+        className="w-full h-[120vh] object-cover object-top"
       />
       
       {/* Content - positioned absolutely over the image */}
