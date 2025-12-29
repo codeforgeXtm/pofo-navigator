@@ -4,16 +4,17 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="fixed inset-0 w-full h-screen"
-      style={{
-        backgroundImage: `url(${heroDesertBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center 30%', // Smart focus: keeps head/upper body visible
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="relative w-full min-h-screen"
     >
+      {/* Background Image - full width, natural height for scrolling */}
+      <img 
+        src={heroDesertBg}
+        alt="Desert landscape"
+        className="w-full h-auto min-h-screen object-cover object-top"
+      />
+      
       {/* Content - positioned absolutely over the image */}
-      <div className="absolute inset-0 flex flex-col items-center pt-[15%] sm:pt-[12%] md:pt-[10%]">
+      <div className="absolute top-0 left-0 right-0 flex flex-col items-center pt-[15%] sm:pt-[12%] md:pt-[10%]">
         <div className="text-center px-6 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl">
           {/* Main Heading */}
           <h1 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold leading-[1.1] mb-2 sm:mb-4 text-dark opacity-0 animate-fade-in animation-delay-100">

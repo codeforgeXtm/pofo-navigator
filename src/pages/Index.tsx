@@ -4,14 +4,14 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
-      {/* Fullscreen Hero Background */}
-      <HeroSection />
-      
+    <div className="relative min-h-screen w-full">
       {/* Transparent Sidebar overlaid on image */}
       <VerticalSidebar />
       
-      {/* Footer overlaid at bottom */}
+      {/* Scrollable Hero */}
+      <HeroSection />
+      
+      {/* Footer at bottom of image */}
       <Footer isTransparent />
     </div>
   );
