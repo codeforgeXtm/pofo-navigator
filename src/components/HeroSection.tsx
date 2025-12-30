@@ -3,7 +3,7 @@ export const HeroSection = () => {
     <section className="relative w-full h-screen hero-bg flex justify-center items-start">
       
       {/* Text overlay */}
-      <div className="flex flex-col gap-y-5 md:gap-y-7 lg:gap-y-10 pt-[36%] sm:pt-[16%] md:pt-[31%] lg:pt-[1%] xl:pt-[18%] text-center">
+      <div className="flex flex-col gap-y-5 md:gap-y-7 lg:gap-y-10 pt-[18%] sm:pt-[16%] md:pt-[31%] lg:pt-[1%] xl:pt-[18%] text-center">
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-extrabold tracking-wide text-black leading-tight">
           Building Things That 
           <br />
