@@ -1,16 +1,16 @@
 export const HeroSection = () => {
   return (
-    <section className="relative w-full h-screen hero-bg">
+    <section className="relative w-full h-screen hero-bg flex justify-center items-start">
       
       {/* Text overlay */}
-      <div className="absolute inset-0 flex flex-col pt-[25%] sm:pt-[20%] md:pt-[16%] lg:pt-[1%] text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-light tracking-wide text-black leading-tight">
+      <div className="flex flex-col gap-y-5 md:gap-y-7 lg:gap-y-10 pt-[36%] sm:pt-[16%] md:pt-[31%] lg:pt-[1%] xl:pt-[18%] text-center">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-extrabold tracking-wide text-black leading-tight">
           Building Things That 
           <br />
           Inspire And Move People
         </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mt-2">Babafemi - Creator, Strategist and Founder</p>
-        <button className="bg-black px-12 py-2 text-white w-fit mx-auto mt-5 border-0 rounded">Explore</button>
+        <p className="text-base sm:text-lg md:text-3xl lg:text-6xl tracking-wide font-medium">Babafemi - Creator, Strategist and Founder</p>
+        <button className="bg-black px-12 py-3 text-white w-fit mx-auto border-0 rounded-xl text-sm md:text-2xl lg:text-4xl font-light">Explore</button>
       </div>
     </section>
   );

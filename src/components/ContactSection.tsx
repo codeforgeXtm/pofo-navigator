@@ -31,14 +31,14 @@ export const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    
+
     toast({
       title: "Message sent!",
       description: "Thank you for reaching out. I'll get back to you soon.",
     });
-    
+
     setIsSubmitting(false);
     (e.target as HTMLFormElement).reset();
   };
@@ -52,7 +52,7 @@ export const ContactSection = () => {
       <div className="container max-w-2xl px-6 relative">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="reveal font-display text-4xl sm:text-5xl font-normal text-dark-foreground mb-4">
+          <h2 className="reveal font-urbanist text-4xl sm:text-5xl font-normal text-dark-foreground mb-4">
             Let's Create Something Bold.
           </h2>
           <p className="reveal text-dark-foreground/60">
@@ -106,7 +106,9 @@ export const ContactSection = () => {
             className="w-full group bg-dark-foreground hover:bg-dark-foreground/90 text-dark py-6 text-sm uppercase tracking-wider"
           >
             <span className="flex items-center justify-center gap-2">
-              {isSubmitting ? "Sending..." : "Drop me a message and let's create something unforgettable"}
+              {isSubmitting
+                ? "Sending..."
+                : "Drop me a message and let's create something unforgettable"}
               <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Button>

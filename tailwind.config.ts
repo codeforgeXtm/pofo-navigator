@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Gilroy', 'Inter', 'system-ui', 'sans-serif'],
         display: ['Gilroy', 'Inter', 'system-ui', 'sans-serif'],
+        urbanist: ['Urbanist', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

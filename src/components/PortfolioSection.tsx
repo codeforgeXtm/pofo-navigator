@@ -11,7 +11,8 @@ const ventures = [
     id: 1,
     title: "Your Village People",
     category: "Card Game",
-    description: "A wickedly fun card game for wicked people, being adapted into a full immersive world featuring comics, short films and feature length movies.",
+    description:
+      "A wickedly fun card game for wicked people, being adapted into a full immersive world featuring comics, short films and feature length movies.",
     image: yvpGame,
     icon: Gamepad2,
     link: "https://www.kickstarter.com/projects/yvpgame/your-village-people-card-game",
@@ -20,7 +21,8 @@ const ventures = [
     id: 2,
     title: "One Chance",
     category: "Board Game",
-    description: "The most Lagosian board game ever. A fun immersive and chaotic experience that dove tails on life in Lagos, Nigeria and shows you just how fun it can be. Currently being adapted for mobile after selling 10,000 copies globally.",
+    description:
+      "The most Lagosian board game ever. A fun immersive and chaotic experience that dove tails on life in Lagos, Nigeria and shows you just how fun it can be. Currently being adapted for mobile after selling 10,000 copies globally.",
     image: oneChanceGame,
     icon: Gamepad2,
     link: "https://instagram.com/onechancegame",
@@ -31,22 +33,28 @@ const services = [
   {
     id: 1,
     title: "Consulting & Creative Work",
-    description: "Helping brands and creators shape their businesses and products, develop powerful identities, and connect with audiences through honest, innovative consulting partnerships.",
+    description:
+      "Helping brands and creators shape their businesses and products, develop powerful identities, and connect with audiences through honest, innovative consulting partnerships.",
     icon: Briefcase,
   },
   {
     id: 2,
     title: "Businesses & Investments",
-    description: "Setting up innovative businesses using first principles and investing in early stage startups while providing guidance and support through innovative thinking.",
+    description:
+      "Setting up innovative businesses using first principles and investing in early stage startups while providing guidance and support through innovative thinking.",
     icon: TrendingUp,
-    companies: ["Straight Edge Synergy Est 2014", "Divisions Africa Est 2019", "Blank Space Est 2025"],
+    companies: [
+      "Straight Edge Synergy Est 2014",
+      "Divisions Africa Est 2019",
+      "Blank Space Est 2025",
+    ],
   },
 ];
 
 export const PortfolioSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
-  
+
   // Lightbox state
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -63,7 +71,9 @@ export const PortfolioSection = () => {
       { threshold: 0.1 }
     );
 
-    const elements = sectionRef.current?.querySelectorAll(".reveal, .reveal-scale");
+    const elements = sectionRef.current?.querySelectorAll(
+      ".reveal, .reveal-scale"
+    );
     elements?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
@@ -93,11 +103,15 @@ export const PortfolioSection = () => {
 
   return (
     <>
-      <section id="portfolio" ref={sectionRef} className="py-32 md:py-40 bg-dark">
+      <section
+        id="portfolio"
+        ref={sectionRef}
+        className="py-32 md:py-40 bg-dark"
+      >
         <div className="container px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="reveal font-display text-4xl sm:text-5xl md:text-6xl font-normal text-dark-foreground mb-4">
+            <h2 className="reveal font-urbanist text-4xl sm:text-5xl md:text-6xl font-normal text-dark-foreground mb-4">
               Ventures that Define Creativity.
             </h2>
             <p className="reveal text-xl text-dark-foreground/50">
@@ -143,16 +157,22 @@ export const PortfolioSection = () => {
                     }`}
                     loading="lazy"
                   />
-                  
+
                   {/* Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent transition-opacity duration-500 ${
-                    hoveredItem === item.id ? "opacity-100" : "opacity-60"
-                  }`} />
-                  
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent transition-opacity duration-500 ${
+                      hoveredItem === item.id ? "opacity-100" : "opacity-60"
+                    }`}
+                  />
+
                   {/* Arrow */}
-                  <div className={`absolute top-4 right-4 h-10 w-10 rounded-full flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
-                    hoveredItem === item.id ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
-                  }`}>
+                  <div
+                    className={`absolute top-4 right-4 h-10 w-10 rounded-full flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
+                      hoveredItem === item.id
+                        ? "opacity-100 translate-x-0"
+                        : "opacity-0 translate-x-2"
+                    }`}
+                  >
                     <ArrowUpRight className="h-4 w-4 text-dark-foreground" />
                   </div>
 
@@ -161,7 +181,7 @@ export const PortfolioSection = () => {
                     <p className="text-xs uppercase tracking-wider text-dark-foreground/60 mb-2">
                       {item.category}
                     </p>
-                    <h3 className="font-display text-2xl text-dark-foreground mb-3">
+                    <h3 className="font-urbanist text-2xl text-dark-foreground mb-3">
                       {item.title}
                     </h3>
                     <p className="text-dark-foreground/70 text-sm leading-relaxed">
@@ -177,13 +197,16 @@ export const PortfolioSection = () => {
           <div className="reveal pt-12 border-t border-dark-foreground/10 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
-                <div 
+                <div
                   key={service.id}
                   className="reveal p-8 rounded-2xl border border-dark-foreground/10 bg-dark-foreground/5"
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <service.icon className="w-8 h-8 text-primary/60 mb-4" strokeWidth={1.5} />
-                  <h3 className="font-display text-xl text-dark-foreground mb-4">
+                  <service.icon
+                    className="w-8 h-8 text-primary/60 mb-4"
+                    strokeWidth={1.5}
+                  />
+                  <h3 className="font-urbanist text-xl text-dark-foreground mb-4">
                     {service.title}
                   </h3>
                   <p className="text-dark-foreground/60 leading-relaxed mb-4">
@@ -192,7 +215,7 @@ export const PortfolioSection = () => {
                   {service.companies && (
                     <div className="flex flex-wrap gap-2 pt-4 border-t border-dark-foreground/10">
                       {service.companies.map((company) => (
-                        <span 
+                        <span
                           key={company}
                           className="text-xs text-dark-foreground/40 bg-dark-foreground/5 px-3 py-1 rounded-full"
                         >
@@ -208,13 +231,18 @@ export const PortfolioSection = () => {
 
           {/* Story Statement */}
           <div className="reveal text-center max-w-3xl mx-auto pt-12 border-t border-dark-foreground/10">
-            <p className="font-display text-2xl md:text-3xl text-dark-foreground leading-relaxed mb-4">
-              <span className="font-semibold">Story-driven, cinematic, human.</span>
+            <p className="font-urbanist text-2xl md:text-3xl text-dark-foreground leading-relaxed mb-4">
+              <span className="font-semibold">
+                Story-driven, cinematic, human.
+              </span>
               <br />
-              <span className="font-semibold">Every project tells a bold narrative.</span>
+              <span className="font-semibold">
+                Every project tells a bold narrative.
+              </span>
             </p>
             <p className="text-dark-foreground/50 text-lg">
-              From award-winning films to empowering strategies, I build what moves people.
+              From award-winning films to empowering strategies, I build what
+              moves people.
             </p>
           </div>
         </div>

@@ -62,7 +62,7 @@ export const SkillsSection = () => {
       <div className="container max-w-6xl px-6 relative">
         {/* Section header */}
         <div className="text-center mb-20">
-          <h2 className="skill-reveal font-display text-4xl md:text-5xl lg:text-6xl font-normal text-dark-foreground mb-6">
+          <h2 className="skill-reveal font-font-urbanist text-4xl md:text-5xl lg:text-6xl font-normal text-dark-foreground mb-6">
             What I'm Great At
           </h2>
           <p className="skill-reveal skill-delay-1 text-dark-foreground/60 text-lg max-w-2xl mx-auto">
@@ -88,7 +88,7 @@ export const SkillsSection = () => {
               >
                 {/* Number */}
                 <span 
-                  className={`absolute top-6 right-6 font-display text-6xl lg:text-7xl font-light transition-all duration-500
+                  className={`absolute top-6 right-6 font-font-urbanist text-6xl lg:text-7xl font-light transition-all duration-500
                     ${hoveredIndex === index ? "text-primary/40" : "text-dark-foreground/10"}`}
                 >
                   {/* {skill.number} */}
@@ -102,7 +102,7 @@ export const SkillsSection = () => {
                     }`} 
                     strokeWidth={1.5}
                   />
-                  <h3 className="font-display text-xl lg:text-2xl font-normal text-dark-foreground mb-4 pr-16">
+                  <h3 className="font-font-urbanist text-xl lg:text-2xl font-normal text-dark-foreground mb-4 pr-16">
                     {skill.title}
                   </h3>
                   <p className="text-dark-foreground/60 leading-relaxed">

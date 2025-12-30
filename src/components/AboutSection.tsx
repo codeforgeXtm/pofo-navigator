@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
-import aboutPhoto from "@/assets/about-photo.jpg";
+import aboutPhoto from "@/assets/about-bg.jpg";
 
 export const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -43,7 +43,7 @@ export const AboutSection = () => {
         </div>
         {/* My Creative Journey */}
         <div className="mb-20">
-          <h2 className="reveal font-display text-3xl md:text-4xl font-normal mb-8 text-dark-foreground">
+          <h2 className="reveal font-urbanist text-3xl md:text-4xl font-normal mb-8 text-dark-foreground">
             My Creative Journey
           </h2>
           
@@ -60,7 +60,7 @@ export const AboutSection = () => {
             <p className="reveal">
               Today, I channel bold ideas into work that inspires, moves, and connects people. Whether I'm launching new ventures, creative consulting, or building a vibrant creative community or game, my mission remains the same.
             </p>
-            <p className="reveal font-display text-dark-foreground text-xl">
+            <p className="reveal font-urbanist text-dark-foreground text-xl">
               To Build things that Inspire.
             </p>
           </div>
@@ -73,7 +73,7 @@ export const AboutSection = () => {
 
         {/* A Life Designed Bold */}
         <div className="mb-20 pt-12 border-t border-dark-foreground/10">
-          <h3 className="reveal font-display text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
+          <h3 className="reveal font-urbanist text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
             A Life Designed Bold
           </h3>
           
@@ -89,7 +89,7 @@ export const AboutSection = () => {
 
         {/* Living Boldly */}
         <div className="pt-12 border-t border-dark-foreground/10">
-          <h3 className="reveal font-display text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
+          <h3 className="reveal font-urbanist text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
             Living Boldly, Creatively, Human
           </h3>
           

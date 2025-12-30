@@ -104,7 +104,7 @@ export const Lightbox = ({
           <p className="text-xs uppercase tracking-wider text-primary mb-2">
             {currentImage.category}
           </p>
-          <h3 className="font-display text-2xl md:text-3xl text-dark-foreground">
+          <h3 className="font-urbanist text-2xl md:text-3xl text-dark-foreground">
             {currentImage.title}
           </h3>
         </div>
