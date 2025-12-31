@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -392,4 +392,36 @@
   }
 }
 
+@media screen and (min-width: 1339px) {
+  .hero-section div {
+    padding-top: 2%;
+    row-gap: 16px;
+  }
+  .hero-section div h1 {
+    font-size: 40px;
+  }
+  .hero-section div p {
+    font-size: 28px;
+  }
+  .hero-section div button {
+    font-size: 16px;
+    padding: 4px 32px;
+  }
+}
 
+@media screen and (min-width: 1539px) {
+  .hero-section div {
+    padding-top: 12%;
+    row-gap: 16px;
+  }
+  .hero-section div h1 {
+    font-size: 64px;
+  }
+  .hero-section div p {
+    font-size: 48px;
+  }
+  .hero-section div button {
+    font-size: 32px;
+    padding: 12px 48px;
+  }
+}

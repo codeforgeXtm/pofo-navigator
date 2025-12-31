@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import bfLogoIcon from "@/assets/bf-logo-icon.png";
 import bfLogoIconWhite from "@/assets/bf-logo-icon-white.png";
 import bfLogoText from "@/assets/bf-logo-text.png";
-import { Button } from "@/components/ui/button";
+import { useSidebar } from "@/contexts/SidebarContext";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -22,7 +22,7 @@ const socialLinks = [
 ];
 
 export const VerticalSidebar = ({ isWhite=false }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useSidebar();
   const [mouseY, setMouseY] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
   const sidebarRef = useRef<HTMLElement>(null);
@@ -64,7 +64,7 @@ export const VerticalSidebar = ({ isWhite=false }) => {
   useEffect(() => {
     setIsOpen(false);
     setIsHidden(false);
-  }, [location.pathname]);
+  }, [location.pathname, setIsOpen]);
 
   return (
     <>

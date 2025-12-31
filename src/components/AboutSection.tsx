@@ -34,7 +34,7 @@ export const AboutSection = () => {
 
       <div className="container relative">
         {/* Profile Photo */}
-        <div className="w-full reveal mb-16 flex justify-center about-bg">
+        <div className="w-full h-[500px] lg:h-[670px] reveal mb-16 flex justify-center about-bg">
           <img 
             src={aboutPhoto} 
             alt="Profile" 
