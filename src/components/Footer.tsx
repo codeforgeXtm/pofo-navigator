@@ -13,10 +13,10 @@ const footerLinks = {
     { label: "Instagram", href: "https://instagram.com/justbabafemi" },
     { label: "Twitter", href: "https://twitter.com/justbabafemi" },
   ],
-  film: [
-    { label: "One Chance", href: "#" },
-    { label: "Your Village People", href: "#" },
-    { label: "Consulting", href: "#" },
+  work: [
+    { label: "One Chance", href: "https://instagram.com/onechancegame" },
+    { label: "Your Village People", href: "https://www.kickstarter.com/projects/yvpgame/your-village-people-card-game" },
+    { label: "Consulting", href: "/work" },
   ],
   contact: [
     { label: "Email", href: "mailto:hello@babafemi.com" },
@@ -47,8 +47,8 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
   if (isTransparent) {
     return (
       <footer className="fixed bottom-0 left-0 right-0 z-40 py-4 px-6">
-        <div className="flex items-center justify-between ml-10 sm:ml-12 lg:ml-20">
-          <p className="text-xs text-white/60">
+        <div className="flex items-center justify-center ml-10 sm:ml-12 lg:ml-20">
+          <p className="text-xs text-white/60 text-center">
             © {new Date().getFullYear()} Babafemi Fagbemi
           </p>
           {/* <div className="flex gap-4">
@@ -128,10 +128,10 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
           {/* Film */}
           <div>
             <h4 className="text-sm font-medium text-dark-foreground mb-4">
-              Film
+              Work
             </h4>
             <ul className="space-y-2">
-              {footerLinks.film.map((link) => (
+              {footerLinks.work.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}

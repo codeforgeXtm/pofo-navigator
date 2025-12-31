@@ -5,25 +5,29 @@ const skills = [
   {
     number: "01",
     title: "Strategic Brand Development",
-    description: "I help ideas find their voice. From positioning to identity, I build brands that feel intentional, human, and built to last.",
+    description:
+      "I help ideas find their voice. From positioning to identity, I build brands that feel intentional, human, and built to last.",
     icon: Compass,
   },
   {
     number: "02",
     title: "Business, Product & Venture Building",
-    description: "I don't stop at concepts. I build, manufacture, and launch real products (games, physical experiences, and ventures) turning ideas into things people can hold, play, use, and pay for.",
+    description:
+      "I don't stop at concepts. I build, manufacture, and launch real products (games, physical experiences, and ventures) turning ideas into things people can hold, play, use, and pay for.",
     icon: Rocket,
   },
   {
     number: "03",
     title: "Creative Direction",
-    description: "I lead with vision and exquisite taste, bringing teams together, setting the bar high, and guiding projects from rough idea to polished execution.",
+    description:
+      "I lead with vision and exquisite taste, bringing teams together, setting the bar high, and guiding projects from rough idea to polished execution.",
     icon: Sparkles,
   },
   {
     number: "04",
     title: "Film & Visual Storytelling",
-    description: "I tell stories visually and everywhere, directing films and content that connect emotionally, communicate clearly, and leave an impression long after.",
+    description:
+      "I tell stories visually and everywhere, directing films and content that connect emotionally, communicate clearly, and leave an impression long after.",
     icon: Clapperboard,
   },
 ];
@@ -62,11 +66,15 @@ export const SkillsSection = () => {
       <div className="container max-w-6xl px-6 relative">
         {/* Section header */}
         <div className="text-center mb-20">
+          <span className="text-sm uppercase tracking-[0.3em] text-dark-foreground/50 mb-4 block">
+            Skills
+          </span>
           <h2 className="skill-reveal font-font-urbanist text-4xl md:text-5xl lg:text-6xl font-normal text-dark-foreground mb-6">
             What I'm Great At
           </h2>
           <p className="skill-reveal skill-delay-1 text-dark-foreground/60 text-lg max-w-2xl mx-auto">
-            I turn ideas into breathtaking experiences. Where strategy, creativity, and execution actually meet.
+            I turn ideas into breathtaking experiences. Where strategy,
+            creativity, and execution actually meet.
           </p>
         </div>
 
@@ -81,25 +89,32 @@ export const SkillsSection = () => {
             >
               <div
                 className={`group relative p-8 lg:p-10 rounded-2xl border transition-all duration-500 cursor-default
-                  ${hoveredIndex === index 
-                    ? "bg-dark-foreground/10 border-primary/30 scale-[1.02]" 
-                    : "bg-dark-foreground/5 border-dark-foreground/10 hover:border-dark-foreground/20"
+                  ${
+                    hoveredIndex === index
+                      ? "bg-dark-foreground/10 border-primary/30 scale-[1.02]"
+                      : "bg-dark-foreground/5 border-dark-foreground/10 hover:border-dark-foreground/20"
                   }`}
               >
                 {/* Number */}
-                <span 
+                <span
                   className={`absolute top-6 right-6 font-font-urbanist text-6xl lg:text-7xl font-light transition-all duration-500
-                    ${hoveredIndex === index ? "text-primary/40" : "text-dark-foreground/10"}`}
+                    ${
+                      hoveredIndex === index
+                        ? "text-primary/40"
+                        : "text-dark-foreground/10"
+                    }`}
                 >
                   {/* {skill.number} */}
                 </span>
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <skill.icon 
+                  <skill.icon
                     className={`w-8 h-8 mb-4 transition-colors duration-500 ${
-                      hoveredIndex === index ? "text-primary" : "text-dark-foreground/40"
-                    }`} 
+                      hoveredIndex === index
+                        ? "text-primary"
+                        : "text-dark-foreground/40"
+                    }`}
                     strokeWidth={1.5}
                   />
                   <h3 className="font-font-urbanist text-xl lg:text-2xl font-normal text-dark-foreground mb-4 pr-16">
@@ -111,7 +126,7 @@ export const SkillsSection = () => {
                 </div>
 
                 {/* Hover glow effect */}
-                <div 
+                <div
                   className={`absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 pointer-events-none
                     ${hoveredIndex === index ? "opacity-100" : ""}`}
                 />

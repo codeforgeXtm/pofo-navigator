@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { ArrowUpRight, Gamepad2, Briefcase, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Lightbox } from "@/components/Lightbox";
-import oneChanceGame from "@/assets/one-chance-game.png";
-import yvpGame from "@/assets/yvp-game.png";
+import oneChanceGame from "@/assets/ONE-CHANCE-GAME.jpg";
+import yvpGame from "@/assets/Your-village-people.png";
 import bfLogoFull from "@/assets/bf-logo-full.png";
 
 const ventures = [
@@ -111,6 +111,9 @@ export const PortfolioSection = () => {
         <div className="container px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
+            <span className="text-sm uppercase tracking-[0.3em] text-dark-foreground/50 mb-4 block">
+              Works
+            </span>
             <h2 className="reveal font-urbanist text-4xl sm:text-5xl md:text-6xl font-normal text-dark-foreground mb-4">
               Ventures that Define Creativity.
             </h2>

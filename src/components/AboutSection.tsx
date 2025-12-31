@@ -17,7 +17,9 @@ export const AboutSection = () => {
       { threshold: 0.15 }
     );
 
-    const elements = sectionRef.current?.querySelectorAll(".reveal, .reveal-scale");
+    const elements = sectionRef.current?.querySelectorAll(
+      ".reveal, .reveal-scale"
+    );
     elements?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
@@ -32,13 +34,20 @@ export const AboutSection = () => {
       {/* Background decoration */}
       {/* <div className="absolute -top-20 right-0 w-[500px] h-[500px] border border-red-500 rounded-full bg-primary/5 blur-3xl" /> */}
 
+      <div className="text-center mb-16">
+        <span className="text-sm uppercase tracking-[0.3em] text-dark-foreground/50 mb-4 block">
+          About BABAFEMI
+        </span>
+      </div>
+
       <div className="container relative">
         {/* Profile Photo */}
-        <div className="w-full h-[500px] lg:h-[670px] reveal mb-16 flex justify-center about-bg">
-          <img 
-            src={aboutPhoto} 
-            alt="Profile" 
-            className="w-full h-auto object-cover shadow-lg"
+        <div className="w-full md:h-[500px] lg:h-[700px] reveal mb-16 flex justify-center about-bg">
+          <img
+            src={aboutPhoto}
+            alt="Profile"
+            className="w-full h-auto object-cover"
+            // style={{imageRendering: "pixelated"}}
           />
         </div>
         {/* My Creative Journey */}
@@ -46,19 +55,31 @@ export const AboutSection = () => {
           <h2 className="reveal font-urbanist text-3xl md:text-4xl font-normal mb-8 text-dark-foreground">
             My Creative Journey
           </h2>
-          
+
           <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
             <p className="reveal">
-              From a young age, I was captivated by storytelling and the power of ideas and what they could become. My creative journey began exploring games, storytelling, music, art, and business, always striving to fuse emotion and innovation in everything I build.
+              From a young age, I was captivated by storytelling and the power
+              of ideas and what they could become. My creative journey began
+              exploring games, storytelling, music, art, and business, always
+              striving to fuse emotion and innovation in everything I build.
             </p>
             <p className="reveal">
-              Through founding businesses, collaborating with diverse creators and exploring my many ideas, I've learned to value honesty, persistence, and the courage to experiment. Each project has deepened my craft and my curiosity, teaching me the art of meaningful impact.
+              Through founding businesses, collaborating with diverse creators
+              and exploring my many ideas, I've learned to value honesty,
+              persistence, and the courage to experiment. Each project has
+              deepened my craft and my curiosity, teaching me the art of
+              meaningful impact.
             </p>
             <p className="reveal">
-              From creating original games, short stories, fonts, businesses and consulting, I have learnt to pour my entire being and drive for quality into everything I do.
+              From creating original games, short stories, fonts, businesses and
+              consulting, I have learnt to pour my entire being and drive for
+              quality into everything I do.
             </p>
             <p className="reveal">
-              Today, I channel bold ideas into work that inspires, moves, and connects people. Whether I'm launching new ventures, creative consulting, or building a vibrant creative community or game, my mission remains the same.
+              Today, I channel bold ideas into work that inspires, moves, and
+              connects people. Whether I'm launching new ventures, creative
+              consulting, or building a vibrant creative community or game, my
+              mission remains the same.
             </p>
             <p className="reveal font-urbanist text-dark-foreground text-xl">
               To Build things that Inspire.
@@ -76,13 +97,19 @@ export const AboutSection = () => {
           <h3 className="reveal font-urbanist text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
             A Life Designed Bold
           </h3>
-          
+
           <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
             <p className="reveal">
-              Living between Lagos and London, I balance creative pursuits with family, adventure, and the search for beauty in the everyday. Cinematic moments, deep conversation, and shared ideas fuel my work and lifestyle.
+              Living between Lagos and London, I balance creative pursuits with
+              family, adventure, and the search for beauty in the everyday.
+              Cinematic moments, deep conversation, and shared ideas fuel my
+              work and lifestyle.
             </p>
             <p className="reveal">
-              Obsessed with honest design and daring concepts, you'll find me sketching, reading about culture, or running cityscapes for new inspiration. My life is a canvas for bold expression. Inspiration for innovation lives all around me.
+              Obsessed with honest design and daring concepts, you'll find me
+              sketching, reading about culture, or running cityscapes for new
+              inspiration. My life is a canvas for bold expression. Inspiration
+              for innovation lives all around me.
             </p>
           </div>
         </div>
@@ -92,16 +119,26 @@ export const AboutSection = () => {
           <h3 className="reveal font-urbanist text-2xl md:text-3xl font-normal mb-8 text-dark-foreground">
             Living Boldly, Creatively, Human
           </h3>
-          
+
           <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
             <p className="reveal">
-              I live in the space between building things and stepping away from them. When I'm not inventing new ventures, I'm recharging through film, music, long conversations, and movement, anything that helps ideas breathe.
+              I live in the space between building things and stepping away from
+              them. When I'm not inventing new ventures, I'm recharging through
+              film, music, long conversations, and movement, anything that helps
+              ideas breathe.
             </p>
             <p className="reveal">
-              My days are a mix of late-night brainstorms, mid day meetings, and long walks where the best ideas usually show up uninvited. I believe inspiration lives in motion, in people, and in paying attention.
+              My days are a mix of late-night brainstorms, mid day meetings, and
+              long walks where the best ideas usually show up uninvited. I
+              believe inspiration lives in motion, in people, and in paying
+              attention.
             </p>
             <p className="reveal">
-              Home matters to me. It's where laughter is loud, dreams feel possible, and ambition has room to stretch. I carry that same energy into my work and my partnerships, intentional, bold, cinematic, and human. Clean at first glance, but always layered with details that stay with you.
+              Home matters to me. It's where laughter is loud, dreams feel
+              possible, and ambition has room to stretch. I carry that same
+              energy into my work and my partnerships, intentional, bold,
+              cinematic, and human. Clean at first glance, but always layered
+              with details that stay with you.
             </p>
           </div>
 
