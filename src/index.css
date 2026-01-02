@@ -110,7 +110,7 @@
   }
 
   body {
-    @apply bg-dark text-dark-foreground font-urbanist antialiased;
+    @apply bg-dark text-dark-foreground font-urbanist antialiased text-base;
   }
 
   h1,

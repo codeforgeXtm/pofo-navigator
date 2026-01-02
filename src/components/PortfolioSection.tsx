@@ -15,7 +15,7 @@ const ventures = [
       "A wickedly fun card game for wicked people, being adapted into a full immersive world featuring comics, short films and feature length movies.",
     image: yvpGame,
     icon: Gamepad2,
-    link: "https://www.kickstarter.com/projects/yvpgame/your-village-people-card-game",
+    link: "https://www.yvpga.com",
   },
   {
     id: 2,
@@ -106,7 +106,7 @@ export const PortfolioSection = () => {
       <section
         id="portfolio"
         ref={sectionRef}
-        className="py-32 md:py-40 bg-dark"
+        className="py-14 bg-dark"
       >
         <div className="container px-6">
           {/* Section Header */}
@@ -190,7 +190,7 @@ export const PortfolioSection = () => {
                     </div>
                   </div>
                 </article>
-                <p className="text-dark-foreground/70 text-base leading-relaxed">
+                <p className="text-dark-foreground/70 text-base md:text-lg leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -213,7 +213,7 @@ export const PortfolioSection = () => {
                   <h3 className="font-urbanist text-xl text-dark-foreground mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-dark-foreground/60 leading-relaxed mb-4">
+                  <p className="text-dark-foreground/60 leading-relaxed mb-4 text-base md:text-lg">
                     {service.description}
                   </p>
                   {service.companies && (

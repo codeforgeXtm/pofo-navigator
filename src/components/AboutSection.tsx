@@ -29,7 +29,7 @@ export const AboutSection = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-32 md:py-40 bg-dark overflow-hidden"
+      className="relative py-14 bg-dark overflow-hidden"
     >
       {/* Background decoration */}
       {/* <div className="absolute -top-20 right-0 w-[500px] h-[500px] border border-red-500 rounded-full bg-primary/5 blur-3xl" /> */}
@@ -56,26 +56,26 @@ export const AboutSection = () => {
             My Creative Journey
           </h2>
 
-          <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
-            <p className="reveal">
+          <div className="space-y-6 text-dark-foreground/70 leading-relaxed text-justify">
+            <p className="reveal text-base md:text-lg">
               From a young age, I was captivated by storytelling and the power
               of ideas and what they could become. My creative journey began
               exploring games, storytelling, music, art, and business, always
               striving to fuse emotion and innovation in everything I build.
             </p>
-            <p className="reveal">
+            <p className="reveal text-base md:text-lg">
               Through founding businesses, collaborating with diverse creators
               and exploring my many ideas, I've learned to value honesty,
               persistence, and the courage to experiment. Each project has
               deepened my craft and my curiosity, teaching me the art of
               meaningful impact.
             </p>
-            <p className="reveal">
+            <p className="reveal text-base md:text-lg">
               From creating original games, short stories, fonts, businesses and
               consulting, I have learnt to pour my entire being and drive for
               quality into everything I do.
             </p>
-            <p className="reveal">
+            <p className="reveal text-base md:text-lg">
               Today, I channel bold ideas into work that inspires, moves, and
               connects people. Whether I'm launching new ventures, creative
               consulting, or building a vibrant creative community or game, my
@@ -87,8 +87,8 @@ export const AboutSection = () => {
           </div>
 
           {/* Signature */}
-          <div className="reveal mt-8">
-            <img src={bfLogoIcon} alt="BF" className="h-10 w-10 opacity-60" />
+          <div className="reveal mt-8 w-10">
+            <img src={bfLogoIcon} alt="BF" className="h-auto w-full opacity-60" />
           </div>
         </div>
 
@@ -99,13 +99,13 @@ export const AboutSection = () => {
           </h3>
 
           <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
-            <p className="reveal">
+            <p className="reveal text-base md:text-lg">
               Living between Lagos and London, I balance creative pursuits with
               family, adventure, and the search for beauty in the everyday.
               Cinematic moments, deep conversation, and shared ideas fuel my
               work and lifestyle.
             </p>
-            <p className="reveal">
+            <p className="reveal text-base md:text-lg">
               Obsessed with honest design and daring concepts, you'll find me
               sketching, reading about culture, or running cityscapes for new
               inspiration. My life is a canvas for bold expression. Inspiration
@@ -121,19 +121,19 @@ export const AboutSection = () => {
           </h3>
 
           <div className="space-y-6 text-dark-foreground/70 leading-relaxed">
-            <p className="reveal">
+            <p className="reveal text-base md:text-lg">
               I live in the space between building things and stepping away from
               them. When I'm not inventing new ventures, I'm recharging through
               film, music, long conversations, and movement, anything that helps
               ideas breathe.
             </p>
-            <p className="reveal">
+            <p className="reveal text-base md:text-lg">
               My days are a mix of late-night brainstorms, mid day meetings, and
               long walks where the best ideas usually show up uninvited. I
               believe inspiration lives in motion, in people, and in paying
               attention.
             </p>
-            <p className="reveal">
+            <p className="reveal text-base md:text-lg">
               Home matters to me. It's where laughter is loud, dreams feel
               possible, and ambition has room to stretch. I carry that same
               energy into my work and my partnerships, intentional, bold,
@@ -143,8 +143,8 @@ export const AboutSection = () => {
           </div>
 
           {/* Signature */}
-          <div className="reveal mt-8">
-            <img src={bfLogoIcon} alt="BF" className="h-10 w-10 opacity-60" />
+          <div className="reveal mt-8 w-10">
+            <img src={bfLogoIcon} alt="BF" className="h-auto w-full opacity-60" />
           </div>
         </div>
       </div>

@@ -12,16 +12,20 @@ const navItems = [
   { label: "About", href: "/about" },
   { label: "Skills", href: "/skills" },
   { label: "Work", href: "/work" },
-  { label: "Updates", href: "/updates" },
+  { label: "Newsletter / Signup", href: "/newsletter" },
   { label: "Contact", href: "/contact" },
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com/justbabafemi", label: "Instagram" },
+  {
+    icon: Instagram,
+    href: "https://instagram.com/justbabafemi",
+    label: "Instagram",
+  },
   { icon: Twitter, href: "https://twitter.com/justbabafemi", label: "Twitter" },
 ];
 
-export const VerticalSidebar = ({ isWhite=false }) => {
+export const VerticalSidebar = ({ isWhite = false }) => {
   const { isOpen, setIsOpen } = useSidebar();
   const [mouseY, setMouseY] = useState(0);
   const [isHidden, setIsHidden] = useState(false);
@@ -40,7 +44,7 @@ export const VerticalSidebar = ({ isWhite=false }) => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const isMobile = window.innerWidth < 1024;
-      
+
       if (isMobile && !isOpen) {
         if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
           setIsHidden(true);
@@ -48,7 +52,7 @@ export const VerticalSidebar = ({ isWhite=false }) => {
           setIsHidden(false);
         }
       }
-      
+
       lastScrollY.current = currentScrollY;
     };
 
@@ -73,15 +77,19 @@ export const VerticalSidebar = ({ isWhite=false }) => {
         ref={sidebarRef}
         className={cn(
           "fixed left-0 top-0 z-50 h-screen transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]",
-          isOpen ? "w-80 bg-sidebar border-r border-sidebar-border" : "w-10 sm:w-12 lg:w-20 bg-transparent border-r-0",
-          isHidden && !isOpen ? "-translate-x-full lg:translate-x-0" : "translate-x-0"
+          isOpen
+            ? "w-80 bg-sidebar border-r border-sidebar-border"
+            : "w-0 sm:w-0 lg:w-0 bg-transparent border-r-0 -translate-x-2",
+          isHidden && !isOpen
+            ? "-translate-x-full lg:translate-x-0"
+            : "translate-x-0"
         )}
       >
         {/* Hover glow effect */}
-        <div 
+        {/* <div 
           className="absolute left-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none transition-all duration-300 opacity-50"
           style={{ top: `${mouseY - 64}px` }}
-        />
+        /> */}
 
         <div className="relative flex h-full flex-col justify-between py-5 lg:py-8">
           {/* Header - Logo/Close Button */}
@@ -90,9 +98,9 @@ export const VerticalSidebar = ({ isWhite=false }) => {
               /* Expanded state: X on right, logo centered */
               <div className="w-full flex items-center justify-between px-6">
                 <div className="w-6" /> {/* Spacer for centering */}
-                <img 
-                  src={bfLogoText} 
-                  alt="Babafemi Logo" 
+                <img
+                  src={bfLogoText}
+                  alt="Babafemi Logo"
                   className="h-20 object-contain"
                 />
                 <button
@@ -107,55 +115,112 @@ export const VerticalSidebar = ({ isWhite=false }) => {
               /* Collapsed state: just the icon logo */
               <button
                 onClick={() => setIsOpen(true)}
-                className="group relative flex h-8 w-8 lg:h-14 lg:w-14 items-center justify-center transition-all duration-300 hover:scale-105"
+                className="group fixed left-4 flex h-8 w-8 lg:h-14 lg:w-14 items-center justify-center transition-all duration-300 hover:scale-105"
                 aria-label="Open menu"
               >
-                {isWhite ? (<img 
-                  src={bfLogoIconWhite} 
-                  alt="BF Logo" 
-                  className="h-6 w-6 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
-                />) : (<img 
-                  src={bfLogoIcon} 
-                  alt="BF Logo" 
-                  className="h-6 w-6 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
-                />)}
+                {isWhite ? (
+                  <img
+                    src={bfLogoIconWhite}
+                    alt="BF Logo"
+                    className="h-6 w-6 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
+                ) : (
+                  <img
+                    src={bfLogoIcon}
+                    alt="BF Logo"
+                    className="h-6 w-6 lg:h-12 lg:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
+                )}
               </button>
             )}
           </div>
 
           {/* Navigation */}
-          <nav className={cn(
-            "flex-1 flex flex-col justify-center transition-all duration-700",
-            isOpen ? "px-10 opacity-100 translate-x-0" : "px-4 opacity-0 -translate-x-4 pointer-events-none"
-          )}>
+          <nav
+            className={cn(
+              "flex-1 flex flex-col justify-center transition-all duration-700",
+              isOpen
+                ? "px-10 opacity-100 translate-x-0"
+                : "px-4 opacity-0 -translate-x-4 pointer-events-none"
+            )}
+          >
             <ul className="space-y-6">
-              {navItems.map((item, index) => (
-                <li 
-                  key={item.label}
-                  style={{ transitionDelay: `${index * 50}ms` }}
-                  className={cn(
-                    "transition-all duration-500",
-                    isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
-                  )}
-                >
-                  <Link
-                    to={item.href}
+              {navItems.map((item, index) => {
+                const isActive = location.pathname === item.href;
+                return (
+                  <li
+                    key={item.label}
+                    style={{ transitionDelay: `${index * 50}ms` }}
                     className={cn(
-                      "group relative text-base font-normal tracking-wide transition-colors",
-                      location.pathname === item.href
-                        ? "text-dark-foreground"
-                        : "text-sidebar-foreground hover:text-dark-foreground"
+                      "transition-all duration-500",
+                      isOpen
+                        ? "opacity-100 translate-x-0"
+                        : "opacity-0 -translate-x-4"
                     )}
                   >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "group relative text-lg font-medium tracking-wide transition-all duration-300 flex items-center gap-3 py-2 px-4 -mx-4 rounded-lg overflow-hidden",
+                        isActive
+                          ? "text-dark-foreground font-bold"
+                          : "text-sidebar-foreground hover:text-dark-foreground"
+                      )}
+                    >
+                      {/* Background roll-over effect */}
+                      <span
+                        className={cn(
+                          "absolute inset-0 bg-gradient-to-r from-dark-foreground/5 to-dark-foreground/10 rounded-lg transition-all duration-300 ease-out",
+                          isActive
+                            ? "opacity-100 scale-100"
+                            : "opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100"
+                        )}
+                      />
+
+                      {/* Active indicator - left border */}
+                      <span
+                        className={cn(
+                          "absolute -left-4 h-8 w-1 bg-dark-foreground rounded-r-full transition-all duration-300",
+                          isActive
+                            ? "opacity-100 scale-y-100"
+                            : "opacity-0 scale-y-0 group-hover:opacity-50 group-hover:scale-y-100"
+                        )}
+                      />
+
+                      {/* Active dot indicator */}
+                      <span
+                        className={cn(
+                          "relative z-10 w-2 h-2 rounded-full bg-dark-foreground transition-all duration-300",
+                          isActive
+                            ? "opacity-100 scale-100"
+                            : "opacity-0 scale-0 group-hover:opacity-50 group-hover:scale-100"
+                        )}
+                      />
+
+                      <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+                        {item.label}
+                      </span>
+
+                      {/* Arrow indicator on hover */}
+                      {/* <span
+                        className={cn(
+                          "relative z-10 ml-auto transition-all duration-300",
+                          isActive
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
+                        )}
+                      >
+                        →
+                      </span> */}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
           {/* Social Links */}
-          <div className="flex flex-col items-center gap-4 lg:gap-6">
+          <div className="flex flex-col items-center gap-4 lg:gap-6 -ml-5 ">
             {isOpen ? (
               <div className="flex gap-6 animate-fade-in">
                 {socialLinks.map((social) => (

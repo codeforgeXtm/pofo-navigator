@@ -58,10 +58,10 @@ export const SkillsSection = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-32 md:py-40 bg-dark overflow-hidden"
+      className="relative py-14 bg-dark overflow-hidden"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-transparent to-transparent" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-transparent to-transparent" /> */}
 
       <div className="container max-w-6xl px-6 relative">
         {/* Section header */}
@@ -120,7 +120,7 @@ export const SkillsSection = () => {
                   <h3 className="font-font-urbanist text-xl lg:text-2xl font-normal text-dark-foreground mb-4 pr-16">
                     {skill.title}
                   </h3>
-                  <p className="text-dark-foreground/60 leading-relaxed">
+                  <p className="text-dark-foreground/60 leading-relaxed text-base md:text-lg">
                     {skill.description}
                   </p>
                 </div>

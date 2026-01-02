@@ -2,7 +2,7 @@ import { posts } from "@/data/posts";
 
 const NewsletterSection = () => {
   return (
-    <section id="updates" className="py-24 md:py-32 bg-dark">
+    <section id="updates" className="py-14 bg-dark">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
@@ -27,7 +27,7 @@ const NewsletterSection = () => {
                 <h3 className="text-xl md:text-2xl font-light mt-2 mb-3 text-dark-foreground group-hover:text-primary/80 transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-dark-foreground/70 leading-relaxed">
+                <p className="text-dark-foreground/70 leading-relaxed text-base md:text-lg">
                   {post.excerpt}
                 </p>
               </article>

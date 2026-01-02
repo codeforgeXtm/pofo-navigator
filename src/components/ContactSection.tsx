@@ -47,7 +47,7 @@ export const ContactSection = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-32 md:py-40 bg-dark overflow-hidden"
+      className="relative py-14 bg-dark overflow-hidden"
     >
       <div className="container max-w-2xl px-6 relative">
         {/* Section Header */}

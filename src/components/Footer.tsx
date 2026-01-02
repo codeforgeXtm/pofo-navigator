@@ -15,7 +15,7 @@ const footerLinks = {
   ],
   work: [
     { label: "One Chance", href: "https://instagram.com/onechancegame" },
-    { label: "Your Village People", href: "https://www.kickstarter.com/projects/yvpgame/your-village-people-card-game" },
+    { label: "Your Village People", href: "https://www.yvpga.com" },
     { label: "Consulting", href: "/work" },
   ],
   contact: [
@@ -82,7 +82,7 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
             <img
               src={bfLogoIcon}
               alt="BABAFEMI"
-              className="h-10 w-10 object-contain"
+              className="h-auto w-10 object-contain"
             />
           </div>
 
