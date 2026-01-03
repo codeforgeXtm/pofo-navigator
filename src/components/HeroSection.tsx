@@ -1,5 +1,6 @@
 import { useSidebar } from "@/contexts/SidebarContext";
 import Cloud from "@/components/doodles/Cloud";
+import Cloud2 from "@/components/doodles/Cloud2";
 import Sun from "@/components/doodles/Sun";
 import Bus from "@/components/doodles/Bus";
 import PaperPlane from "@/components/doodles/PaperPlane";
@@ -26,65 +27,65 @@ export const HeroSection = () => {
       {/* Animated Doodles */}
       <div className="absolute inset-0 pointer-events-none z-10">
         {/* Sun - top left area with face */}
-        <Sun className="absolute top-[3%] left-[5%] w-12 h-12 md:w-14 md:h-14 animate-float animation-delay-1000" />
+        <Sun className="absolute top-[5%] left-[26%] w-12 h-12 md:w-14 md:h-14 animate-float animation-delay-1000" />
 
         {/* Eyes - top center-left, looking around */}
-        <Eyes className="absolute top-[3%] left-[22%] w-10 h-7 md:w-12 md:h-8 animate-float-slow animation-delay-2000" />
+        <Eyes className="absolute top-[3%] left-[26%] w-10 h-7 md:w-12 md:h-8 animate-float-slow animation-delay-2000" />
 
         {/* Cloud 1 - left side, larger */}
         <Cloud className="absolute top-[12%] left-[1%] w-24 h-14 md:w-32 md:h-18 animate-float-slow" />
 
         {/* Paper Plane - flies across the headline with trailing curved line */}
-        <PaperPlane className="absolute top-[12%] left-[30%] w-28 h-14 md:w-36 md:h-18 animate-fly" />
+        <PaperPlane className="absolute top-[12%] left-[30%] w-64 h-32 md:w-96 md:h-48 animate-fly" />
 
         {/* Shooting Star - top right corner */}
-        <ShootingStar className="absolute top-[4%] right-[4%] w-20 h-10 md:w-24 md:h-12 animate-shoot" />
+        <ShootingStar className="absolute top-[40%] left-[-2%] w-32 h-16 md:w-40 md:h-20 animate-shoot" />
 
         {/* Cloud 2 - right side, large */}
-        <Cloud className="absolute top-[8%] right-[2%] w-28 h-16 md:w-36 md:h-20 animate-float-slow animation-delay-4000" />
+        <Cloud2 className="absolute top-[8%] right-[2%] w-28 h-16 md:w-36 md:h-20 animate-float-slow animation-delay-4000" />
 
         {/* Music Note with sparkle lines - right side */}
-        <MusicNote className="absolute top-[10%] right-[14%] w-8 h-11 md:w-10 md:h-13 animate-sway" />
+        <MusicNote className="absolute top-[50%] right-[14%] w-8 h-11 md:w-10 md:h-13 animate-sway" />
 
         {/* Plus/Cross - center left area */}
         <Plus className="absolute top-[20%] left-[28%] w-8 h-8 md:w-10 md:h-10 animate-float animation-delay-2000" />
 
-        {/* Crown - positioned to the right of the person's head, slanted */}
-        <Crown className="absolute top-[36%] left-[48%] md:left-[49%] w-12 h-10 md:w-14 md:h-12 animate-crown" style={{ transform: 'rotate(15deg)' }} />
+        {/* Crown - positioned to the right side, slanted */}
+        <Crown className="absolute top-[38%] left-[50%] w-12 h-10 md:w-14 md:h-12 animate-crown" style={{ transform: 'rotate(15deg)' }} />
 
         {/* Smiley - middle area on mobile, sky area on desktop */}
         <Smiley className="absolute top-[48%] md:top-[18%] left-[20%] md:left-[12%] w-10 h-10 md:w-12 md:h-12 animate-float animation-delay-1000" />
 
         {/* Lightning bolts - left side, scattered */}
-        <Lightning className="absolute top-[48%] left-[8%] w-5 h-10 md:w-6 md:h-12 animate-float-fast animation-delay-3000" />
+        <Lightning className="absolute top-[48%] left-[8%] w-10 h-20 md:w-12 md:h-24 animate-lightning animation-delay-3000" />
 
         {/* Shooting star/comet - left side going diagonal */}
         <Star className="absolute top-[32%] left-[5%] w-4 h-4 animate-twinkle" filled />
 
         {/* Clapperboard - left area in the sky, animates open/close */}
-        <Clapperboard className="absolute top-[55%] left-[18%] w-11 h-11 md:w-13 md:h-13 animate-clap" />
+        <Clapperboard className="absolute top-[40%] left-[18%] w-20 h-20 md:w-24 md:h-24 animate-clap" />
 
         {/* More Lightning bolts near clapperboard */}
-        <Lightning className="absolute top-[55%] left-[38%] w-4 h-8 md:w-5 md:h-10 animate-float animation-delay-4000" />
-        <Lightning className="absolute top-[55%] left-[39%] w-3 h-6 md:w-4 md:h-8 animate-float-fast animation-delay-1000" />
+        <Lightning className="absolute top-[40%] left-[38%] w-8 h-16 md:w-10 md:h-20 animate-lightning animation-delay-4000" />
+        <Lightning className="absolute top-[40%] left-[39%] w-6 h-12 md:w-8 md:h-16 animate-lightning animation-delay-1000" />
 
         {/* Speech Bubble with HEY! - center right near person */}
-        <SpeechBubble className="absolute top-[48%] right-[30%] w-20 h-15 md:w-24 md:h-18 animate-bounce-subtle" />
+        <SpeechBubble className="absolute top-[45%] right-[36%] w-32 h-24 md:w-40 md:h-30 animate-bounce-subtle" />
 
         {/* Hashtag - right side */}
         <Hashtag className="absolute top-[32%] right-[22%] w-8 h-10 md:w-10 md:h-12 animate-float animation-delay-3000" />
 
         {/* Bus - on the horizon line, drives across from left to right */}
-        <Bus className="absolute top-[60%] md:top-[60%] left-0 w-16 h-10 md:w-20 md:h-12 animate-drive" />
+        <Bus className="absolute top-[60%] md:top-[55%] left-0 w-28 h-18 md:w-36 md:h-24 animate-drive" />
 
         {/* Decorative curved line - under button area */}
         <CurvedLine className="absolute top-[24%] left-[35%] w-32 h-8 md:w-40 md:h-10 opacity-60" />
 
         {/* Lightbulb - right side in the sky */}
-        <Lightbulb className="absolute top-[50%] md:top-[22%] right-[4%] w-10 h-13 md:w-12 md:h-15 animate-glow animate-float-slow animation-delay-2000" />
+        <Lightbulb className="absolute top-[50%] md:top-[25%] right-[4%] w-10 h-13 md:w-12 md:h-15 animate-glow animate-float-slow animation-delay-2000" />
 
-        {/* Cloud 3 - center right area */}
-        <Cloud className="absolute top-[22%] right-[24%] w-20 h-11 md:w-24 md:h-13 animate-float animation-delay-3000" />
+        {/* Cloud 3 - center right area
+        <Cloud2 className="absolute top-[22%] right-[24%] w-20 h-11 md:w-24 md:h-13 animate-float animation-delay-3000" /> */}
 
         {/* Star/sparkle decorations scattered */}
         <Sparkle className="absolute top-[5%] right-[28%] w-4 h-4 md:w-5 md:h-5 animate-twinkle animation-delay-1000" />

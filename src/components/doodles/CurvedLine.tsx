@@ -1,15 +1,14 @@
 const CurvedLine = ({ className = "" }: { className?: string }) => (
   <svg
-    viewBox="0 0 200 40"
+    viewBox="0 0 100 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
     <path
-      d="M5 25 Q50 5 100 20 Q150 35 195 15"
-      stroke="hsl(var(--foreground))"
-      strokeWidth="2.5"
-      strokeLinecap="round"
+      d="M5 15 Q 25 5, 50 15 T 95 15"
+      stroke="hsl(var(--doodle-line))"
+      strokeWidth="2"
       fill="none"
     />
   </svg>
