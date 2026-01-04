@@ -51,7 +51,7 @@ export const HeroSection = () => {
         <Plus className="absolute top-[20%] left-[40%] md:top-[49%] md:left-[29%] lg:top-[33%] lg:left-[34%] w-8 h-8 md:w-12 md:h-16 animate-float animation-delay-2000" />
 
         {/* Crown - positioned to the right side, slanted */}
-        <Crown className="absolute top-[34%] left-[50%] md:top-[49%] md:left-[50%] lg:top-[32%] lg:left-[50%] w-12 h-10 md:w-14 md:h-12 animate-crown" style={{ transform: 'rotate(15deg)' }} />
+        <Crown className="absolute top-[34%] left-[50%] md:top-[49%] md:left-[50%] lg:top-[38%] lg:left-[50%] w-12 h-10 md:w-14 md:h-12 animate-crown" style={{ transform: 'rotate(15deg)' }} />
 
         {/* Smiley - middle area on mobile, sky area on desktop */}
         <Smiley className="absolute top-[4%] left-[12%] md:top-[40%] md:left-[21%] lg:top-[30%] lg:left-[21%] w-12 h-12 md:w-15 md:h-15 animate-float animation-delay-1000" />
@@ -60,7 +60,7 @@ export const HeroSection = () => {
         <Lightning className="absolute top-[20%] left-[3%] md:top-[58%] md:left-[29%] lg:top-[45%] lg:left-[34%] w-10 h-20 md:w-12 md:h-24 animate-lightning animation-delay-3000" />
 
         {/* Clapperboard - left area in the sky, animates open/close */}
-        <Clapperboard className="absolute top-[36%] left-[18%] md:top-[58%] md:left-[15%] lg:top-[48%] lg:left-[20%] w-20 h-20 md:w-16 md:h-16 animate-clap" />
+        <Clapperboard className="absolute top-[36%] left-[18%] md:top-[58%] md:left-[15%] lg:top-[48%] lg:left-[20%] w-20 h-20 md:w-16 md:h-16" />
 
         {/* Speech Bubble with HEY! - center right near person */}
         {/* <SpeechBubble className="absolute top-[34%] right-[16%] md:top-[54%] md:right-[20%] lg:top-[38%] lg:right-[34%] w-32 h-32 md:w-44 md:h-30 animate-bounce-subtle" /> */}
@@ -69,7 +69,7 @@ export const HeroSection = () => {
         <Hashtag className="absolute top-[4%] right-[22%] md:top-[60%] md:right-[15%] lg:top-[52%] lg:right-[27%] w-8 h-10 md:w-10 md:h-12 animate-float animation-delay-3000" />
 
         {/* Bus - on the horizon line, drives across from left to right */}
-        <Bus className="absolute top-[39%] md:top-[60%] lg:top-[48%] left-0 w-28 h-18 md:w-36 md:h-24 animate-drive" />
+        <Bus className="absolute top-[39%] md:top-[60%] lg:top-[53%] left-0 w-28 h-18 md:w-36 md:h-24 animate-drive" />
 
         {/* Decorative curved line - under button area */}
         {/* <CurvedLine className="absolute top-[24%] left-[35%] w-32 h-8 md:w-40 md:h-10" /> */}
