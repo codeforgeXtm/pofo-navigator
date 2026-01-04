@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { SidebarProvider } from "@/contexts/SidebarContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
@@ -15,6 +16,7 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
+  <HelmetProvider>
   <SidebarProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -35,6 +37,7 @@ const App = () => (
       </TooltipProvider>
     </QueryClientProvider>
   </SidebarProvider>
+  </HelmetProvider>
 );
 
 export default App;
