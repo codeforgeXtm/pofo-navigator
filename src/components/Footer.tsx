@@ -19,7 +19,7 @@ const footerLinks = {
     { label: "Consulting", href: "/work" },
   ],
   contact: [
-    { label: "Email", href: "mailto:hello@babafemi.com" },
+    { label: "Email", href: "/contact" },
     // { label: "Newsletter", href: "#" },
     // { label: "Terms", href: "#" },
   ],

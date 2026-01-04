@@ -5,6 +5,8 @@ import { Lightbox } from "@/components/Lightbox";
 import oneChanceGame from "@/assets/ONE-CHANCE-GAME.jpg";
 import yvpGame from "@/assets/Your-village-people.png";
 import bfLogoFull from "@/assets/bf-logo-full.png";
+import img1 from "@/assets/portfolio_1.jpg";
+import img2 from "@/assets/portfolio_2.jpg";
 
 const ventures = [
   {
@@ -36,6 +38,7 @@ const services = [
     description:
       "Helping brands and creators shape their businesses and products, develop powerful identities, and connect with audiences through honest, innovative consulting partnerships.",
     icon: Briefcase,
+    image: img2,
   },
   {
     id: 2,
@@ -48,6 +51,7 @@ const services = [
       "Divisions Africa Est 2019",
       "Blank Space Est 2025",
     ],
+    image: img1,
   },
 ];
 
@@ -201,34 +205,85 @@ export const PortfolioSection = () => {
           <div className="reveal pt-12 border-t border-dark-foreground/10 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
-                <div
-                  key={service.id}
-                  className="reveal p-8 rounded-2xl border border-dark-foreground/10 bg-dark-foreground/5"
+                // <div
+                //   key={service.id}
+                //   className="reveal p-8 rounded-2xl border border-dark-foreground/10 bg-dark-foreground/5"
+                //   style={{ transitionDelay: `${index * 100}ms` }}
+                // >
+                //   <service.icon
+                //     className="w-8 h-8 text-primary/60 mb-4"
+                //     strokeWidth={1.5}
+                //   />
+                //   <h3 className="font-urbanist text-xl text-dark-foreground mb-4">
+                //     {service.title}
+                //   </h3>
+                //   <p className="text-dark-foreground/60 leading-relaxed mb-4 text-base md:text-lg">
+                //     {service.description}
+                //   </p>
+                //   {service.companies && (
+                //     <div className="flex flex-wrap gap-2 pt-4 border-t border-dark-foreground/10">
+                //       {service.companies.map((company) => (
+                //         <span
+                //           key={company}
+                //           className="text-xs text-dark-foreground/40 bg-dark-foreground/5 px-3 py-1 rounded-full"
+                //         >
+                //           {company}
+                //         </span>
+                //       ))}
+                //     </div>
+                //   )}
+                // </div>
+                <div key={service.id} className="flex flex-col gap-y-4">
+                <article
+                  className="reveal-scale group cursor-pointer h-full"
                   style={{ transitionDelay: `${index * 100}ms` }}
+                  onMouseEnter={() => setHoveredItem(service.id)}
+                  onMouseLeave={() => setHoveredItem(null)}
                 >
-                  <service.icon
-                    className="w-8 h-8 text-primary/60 mb-4"
-                    strokeWidth={1.5}
-                  />
-                  <h3 className="font-urbanist text-xl text-dark-foreground mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-dark-foreground/60 leading-relaxed mb-4 text-base md:text-lg">
-                    {service.description}
-                  </p>
-                  {service.companies && (
-                    <div className="flex flex-wrap gap-2 pt-4 border-t border-dark-foreground/10">
-                      {service.companies.map((company) => (
-                        <span
-                          key={company}
-                          className="text-xs text-dark-foreground/40 bg-dark-foreground/5 px-3 py-1 rounded-full"
-                        >
-                          {company}
-                        </span>
-                      ))}
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-dark-foreground/10 bg-dark-foreground/5 h-full w-full">
+                    {/* Image */}
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+                        hoveredItem === service.id ? "scale-110" : "scale-100"
+                      }`}
+                      loading="lazy"
+                    />
+
+                    {/* Overlay */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent transition-opacity duration-500 ${
+                        hoveredItem === service.id ? "opacity-100" : "opacity-60"
+                      }`}
+                    />
+
+                    {/* Arrow */}
+                    <div
+                      className={`absolute top-4 right-4 h-10 w-10 rounded-full flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
+                        hoveredItem === service.id
+                          ? "opacity-100 translate-x-0"
+                          : "opacity-0 translate-x-2"
+                      }`}
+                    >
+                      <ArrowUpRight className="h-4 w-4 text-dark-foreground" />
                     </div>
-                  )}
-                </div>
+
+                    {/* Content overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <p className="text-xs uppercase tracking-wider text-dark-foreground/60 mb-2">
+                        {service.companies}
+                      </p>
+                      <h3 className="font-urbanist text-2xl text-dark-foreground mb-3">
+                        {service.title}
+                      </h3>
+                    </div>
+                  </div>
+                </article>
+                <p className="text-dark-foreground/70 text-base md:text-lg leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
               ))}
             </div>
           </div>
