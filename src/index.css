@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -393,7 +394,7 @@
 
 @media screen and (min-width: 310px) {
   .hero-bg {
-    background-image: url("./assets/hero-desert.jpg");
+    background-image: url("./assets/mobile_no_text.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 40%;
@@ -411,7 +412,7 @@
 
 @media screen and (min-width: 769px) {
   .hero-bg {
-    background-image: url("./assets/hero-bg-desktop.png");
+    background-image: url("./assets/desktop_no_text.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 90%;
@@ -421,20 +422,21 @@
 @media screen and (min-width: 1339px) {
   .hero-section div {
     padding-top: 2%;
-    row-gap: 12px;
+    row-gap: 4px;
   }
 
   .hero-section div h1 {
-    font-size: 38px;
+    font-size: 50px;
+    letter-spacing: 0.1px;
   }
 
   .hero-section div p {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .hero-section div button {
-    font-size: 16px;
-    padding: 3px 32px;
+    font-size: 18px;
+    padding: 1px 32px;
   }
 }
 
@@ -449,7 +451,7 @@
   }
 
   .hero-section div p {
-    font-size: 48px;
+    font-size: 18px;
   }
 
   .hero-section div button {

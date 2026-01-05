@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { ArrowUpRight, Gamepad2, Briefcase, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Lightbox } from "@/components/Lightbox";
@@ -107,11 +108,7 @@ export const PortfolioSection = () => {
 
   return (
     <>
-      <section
-        id="portfolio"
-        ref={sectionRef}
-        className="py-14 bg-dark"
-      >
+      <section id="portfolio" ref={sectionRef} className="py-14 bg-dark">
         <div className="container px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -127,13 +124,12 @@ export const PortfolioSection = () => {
 
             {/* CTA Button */}
             <div className="reveal flex flex-wrap justify-center gap-4 mt-8">
-              <Button
-                onClick={scrollToContact}
-                variant="outline"
-                className="px-6 py-5 text-sm uppercase tracking-wider border-primary/50 text-dark-foreground bg-transparent hover:bg-primary/10 hover:border-primary"
+              <Link
+                to="/contact"
+                className="px-6 py-5 text-sm uppercase tracking-wider border border-primary/50 text-dark-foreground bg-transparent hover:bg-primary/10 hover:border-primary"
               >
                 Get In Touch
-              </Button>
+              </Link>
             </div>
           </div>
 
@@ -234,56 +230,58 @@ export const PortfolioSection = () => {
                 //   )}
                 // </div>
                 <div key={service.id} className="flex flex-col gap-y-4">
-                <article
-                  className="reveal-scale group cursor-pointer h-full"
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                  onMouseEnter={() => setHoveredItem(service.id)}
-                  onMouseLeave={() => setHoveredItem(null)}
-                >
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-dark-foreground/10 bg-dark-foreground/5 h-full w-full">
-                    {/* Image */}
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
-                        hoveredItem === service.id ? "scale-110" : "scale-100"
-                      }`}
-                      loading="lazy"
-                    />
+                  <article
+                    className="reveal-scale group cursor-pointer h-full"
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                    onMouseEnter={() => setHoveredItem(service.id)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                  >
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-dark-foreground/10 bg-dark-foreground/5 h-full w-full">
+                      {/* Image */}
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+                          hoveredItem === service.id ? "scale-110" : "scale-100"
+                        }`}
+                        loading="lazy"
+                      />
 
-                    {/* Overlay */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent transition-opacity duration-500 ${
-                        hoveredItem === service.id ? "opacity-100" : "opacity-60"
-                      }`}
-                    />
+                      {/* Overlay */}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent transition-opacity duration-500 ${
+                          hoveredItem === service.id
+                            ? "opacity-100"
+                            : "opacity-60"
+                        }`}
+                      />
 
-                    {/* Arrow */}
-                    <div
-                      className={`absolute top-4 right-4 h-10 w-10 rounded-full flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
-                        hoveredItem === service.id
-                          ? "opacity-100 translate-x-0"
-                          : "opacity-0 translate-x-2"
-                      }`}
-                    >
-                      <ArrowUpRight className="h-4 w-4 text-dark-foreground" />
+                      {/* Arrow */}
+                      <div
+                        className={`absolute top-4 right-4 h-10 w-10 rounded-full flex items-center justify-center border border-dark-foreground/20 bg-dark/50 backdrop-blur-sm transition-all duration-300 ${
+                          hoveredItem === service.id
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 translate-x-2"
+                        }`}
+                      >
+                        <ArrowUpRight className="h-4 w-4 text-dark-foreground" />
+                      </div>
+
+                      {/* Content overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 className="font-urbanist text-2xl text-dark-foreground mb-3">
+                          {service.title}
+                        </h3>
+                      </div>
                     </div>
-
-                    {/* Content overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <p className="text-xs uppercase tracking-wider text-dark-foreground/60 mb-2">
-                        {service.companies}
-                      </p>
-                      <h3 className="font-urbanist text-2xl text-dark-foreground mb-3">
-                        {service.title}
-                      </h3>
-                    </div>
-                  </div>
-                </article>
-                <p className="text-dark-foreground/70 text-base md:text-lg leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
+                  </article>
+                  <p className="text-xs uppercase tracking-wider text-dark-foreground/60 mb-1">
+                    {service.companies}
+                  </p>
+                  <p className="text-dark-foreground/70 text-base md:text-lg leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
