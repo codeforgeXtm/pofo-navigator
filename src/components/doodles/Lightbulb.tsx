@@ -16,6 +16,10 @@ const Lightbulb = ({ className = "" }: { className?: string }) => (
       <path className="bulb-orange" d="M39.78,7.28,54.45,5A184.38,184.38,0,0,1,40.71,41.4" />
       <path className="bulb-orange" d="M0,39,1.46,24.21A185.13,185.13,0,0,1,33.27,46.64" />
 
+      {/* Brighter highlights */}
+      <path fill="#fff" opacity="0.8" d="M15,15 Q25,5 35,15" />
+      <path fill="#fff" opacity="0.6" d="M5,45 Q15,35 25,45" />
+
       {/* Main glass bulb */}
       <path className="bulb-orange" d="M40.74,139.62a49.83,49.83,0,0,1-11.55-26c-1.35-10.44.83-21.49,7-30s16.5-14.2,27-13.74S83.9,77.44,87.05,87.48c2.6,8.3.42,17.41-3.25,25.29-3.53,7.6-8.6,14.74-15.72,19.17s-16.49,5.76-24,2" />
 

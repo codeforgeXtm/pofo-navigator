@@ -617,11 +617,11 @@
 
   0%,
   100% {
-    filter: drop-shadow(0 0 8px hsl(var(--doodle-yellow) / 0.6));
+    filter: drop-shadow(0 0 8px hsl(var(--doodle-yellow) / 0.6)) drop-shadow(0 0 12px hsl(var(--doodle-yellow) / 0.4));
   }
 
   50% {
-    filter: drop-shadow(0 0 35px hsl(var(--doodle-yellow) / 1));
+    filter: drop-shadow(0 0 15px hsl(var(--doodle-yellow) / 1)) drop-shadow(0 0 30px hsl(var(--doodle-yellow) / 0.8)) drop-shadow(0 0 45px hsl(var(--doodle-yellow) / 0.6)) drop-shadow(0 0 60px #fff);
   }
 }
 
