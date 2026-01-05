@@ -617,11 +617,11 @@
 
   0%,
   100% {
-    filter: drop-shadow(0 0 5px hsl(var(--doodle-yellow) / 0.5));
+    filter: drop-shadow(0 0 8px hsl(var(--doodle-yellow) / 0.6)) drop-shadow(0 0 12px hsl(var(--doodle-yellow) / 0.4));
   }
 
   50% {
-    filter: drop-shadow(0 0 15px hsl(var(--doodle-yellow) / 0.8));
+    filter: drop-shadow(0 0 15px hsl(var(--doodle-yellow) / 1)) drop-shadow(0 0 30px hsl(var(--doodle-yellow) / 0.8)) drop-shadow(0 0 45px hsl(var(--doodle-yellow) / 0.6)) drop-shadow(0 0 60px #fff);
   }
 }
 
@@ -739,7 +739,7 @@
 @keyframes shoot {
   0% {
     opacity: 0;
-    transform: translate(-20px, 20px);
+    transform: translate(20px, 20px);
   }
 
   10% {
@@ -753,12 +753,12 @@
 
   60% {
     opacity: 0;
-    transform: translate(20px, -20px);
+    transform: translate(-20px, -20px);
   }
 
   100% {
     opacity: 0;
-    transform: translate(-20px, 20px);
+    transform: translate(20px, 20px);
   }
 }
 
@@ -837,22 +837,10 @@
 
 @keyframes planeAcross {
   0% {
-    transform: translateX(-50vw) translateY(0);
-  }
-
-  25% {
-    transform: translateX(-15vw) translateY(-15px);
-  }
-
-  50% {
-    transform: translateX(15vw) translateY(10px);
-  }
-
-  75% {
-    transform: translateX(40vw) translateY(-5px);
+    transform: translateX(-50vw);
   }
 
   100% {
-    transform: translateX(60vw) translateY(0);
+    transform: translateX(60vw);
   }
 }

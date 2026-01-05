@@ -10,7 +10,7 @@ const ShootingStar = ({ className = "" }: { className?: string }) => (
         .shooting-white { fill: #fff; }
       `}</style>
     </defs>
-    <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_2" data-name="Layer 2" style={{ transform: 'scaleX(-1)', transformOrigin: 'center' }}>
       <g id="Layer_6" data-name="Layer 6">
         <g>
           {/* Main Star and Trail Yellow Sections */}
