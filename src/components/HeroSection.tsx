@@ -36,7 +36,7 @@ export const HeroSection = () => {
         {/* <Cloud className="absolute top-[8%] left-[20%] md:top-[40%] md:left-[2%] lg:top-[32%] lg:left-[4%] w-24 h-14 md:w-32 md:h-18 animate-float-slow" /> */}
 
         {/* Paper Plane - flies across the headline with trailing curved line */}
-        <PaperPlane className="absolute top-[1%] left-[0%] md:top-[1%] md:left-[30%] lg:top-[-8%] lg:left-[30%] w-64 h-32 md:w-96 md:h-48 animate-fly" />
+        <PaperPlane className="absolute top-[1%] left-[0%] md:top-[1%] md:left-[30%] lg:top-[-7%] lg:left-[30%] w-64 h-32 md:w-96 md:h-48 animate-fly" />
 
         {/* Shooting Star - top right corner */}
         <ShootingStar className="absolute top-[2%] left-[86%] md:top-[5%] md:left-[60%] lg:top-[2%] lg:left-[80%] w-32 h-16 md:w-48 md:h-24 animate-shoot" />
@@ -51,7 +51,7 @@ export const HeroSection = () => {
         {/* <Plus className="absolute top-[20%] left-[40%] md:top-[49%] md:left-[29%] lg:top-[33%] lg:left-[34%] w-8 h-8 md:w-12 md:h-16 animate-float animation-delay-2000" /> */}
 
         {/* Crown - positioned to the right side, slanted */}
-        <Crown className="absolute top-[34%] left-[50%] md:top-[47%] md:left-[50%] lg:top-[32%] lg:left-[50%] w-12 h-10 md:w-14 md:h-12 animate-crown" style={{ transform: 'rotate(15deg)' }} />
+        <Crown className="absolute top-[34%] left-[50%] md:top-[47%] md:left-[50%] lg:top-[38%] lg:left-[50%] w-12 h-10 md:w-14 md:h-12 animate-crown" style={{ transform: 'rotate(15deg)' }} />
 
         {/* Smiley - middle area on mobile, sky area on desktop */}
         {/* <Smiley className="absolute top-[4%] left-[12%] md:top-[40%] md:left-[21%] lg:top-[30%] lg:left-[21%] w-12 h-12 md:w-15 md:h-15 animate-float animation-delay-1000" /> */}
@@ -69,7 +69,7 @@ export const HeroSection = () => {
         <Hashtag className="absolute top-[77%] left-[14%] md:top-[40%] md:left-[10%] lg:top-[29%] lg:left-[10%] w-8 h-10 md:w-10 md:h-12 animate-float animation-delay-3000" />
 
         {/* Bus - on the horizon line, drives across from left to right */}
-        <Bus className="absolute top-[91%] md:top-[93%] lg:top-[86%] left-0 w-28 h-18 md:w-36 md:h-24 animate-drive" />
+        <Bus className="absolute top-[91%] md:top-[93%] lg:top-[88%] left-0 w-28 h-18 md:w-36 md:h-24 animate-drive" />
 
         {/* Decorative curved line - under button area */}
         {/* <CurvedLine className="absolute top-[24%] left-[35%] w-32 h-8 md:w-40 md:h-10" /> */}
