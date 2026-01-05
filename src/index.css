@@ -421,13 +421,13 @@
 
 @media screen and (min-width: 1339px) {
   .hero-section div {
-    padding-top: 2%;
-    row-gap: 4px;
+    padding-top: 2.5%;
+    row-gap: 1px;
   }
 
   .hero-section div h1 {
     font-size: 50px;
-    letter-spacing: 0.1px;
+    letter-spacing: -2px;
   }
 
   .hero-section div p {
