@@ -36,7 +36,7 @@ export const HeroSection = () => {
         {/* <Cloud className="absolute top-[8%] left-[20%] md:top-[40%] md:left-[2%] lg:top-[32%] lg:left-[4%] w-24 h-14 md:w-32 md:h-18 animate-float-slow" /> */}
 
         {/* Paper Plane - flies across the headline with trailing curved line */}
-        <PaperPlane className="absolute top-[1%] left-[0%] md:top-[1%] md:left-[30%] lg:top-[-7%] lg:left-[30%] w-64 h-32 md:w-96 md:h-48 animate-fly" />
+        <PaperPlane className="absolute top-[1%] left-[0%] md:top-[1%] md:left-[30%] lg:top-[-7%] lg:left-[30%] w-64 h-32 md:w-96 md:h-48 lg:w-[480px] lg:h-[240px] animate-fly" />
 
         {/* Shooting Star - top right corner */}
         <ShootingStar className="absolute top-[2%] left-[86%] md:top-[5%] md:left-[60%] lg:top-[2%] lg:left-[80%] w-32 h-16 md:w-48 md:h-24 animate-shoot" />
@@ -60,7 +60,7 @@ export const HeroSection = () => {
         <Lightning className="absolute top-[55%] left-[75%] md:top-[68%] md:left-[80%] lg:top-[65%] lg:left-[70%] w-10 h-20 md:w-12 md:h-24 animate-lightning animation-delay-3000" />
 
         {/* Clapperboard - left area in the sky, animates open/close */}
-        <Clapperboard className="absolute top-[41%] left-[10%] md:top-[66%] md:left-[13%] lg:top-[56%] lg:left-[20%] w-20 h-20 md:w-16 md:h-16" />
+        <Clapperboard className="absolute top-[41%] left-[10%] md:top-[66%] md:left-[13%] lg:top-[56%] lg:left-[20%] w-20 h-20 md:w-16 md:h-16 lg:w-28 lg:h-28" />
 
         {/* Speech Bubble with HEY! - center right near person */}
         {/* <SpeechBubble className="absolute top-[34%] right-[16%] md:top-[54%] md:right-[20%] lg:top-[38%] lg:right-[34%] w-32 h-32 md:w-44 md:h-30 animate-bounce-subtle" /> */}
@@ -90,7 +90,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Text overlay */}
-      <div className="relative z-20 flex flex-col gap-y-5 md:gap-y-3 lg:gap-y-10 pt-[18%] sm:pt-[16%] md:pt-[31%] lg:pt-[1%] xl:pt-[18%] text-center">
+      <div className="relative z-20 flex flex-col gap-y-5 md:gap-y-3 lg:gap-y-10 pt-[18%] sm:pt-[16%] md:pt-[31%] lg:pt-[-1%] xl:pt-[18%] text-center">
         <p className="text-base sm:text-lg md:text-2xl lg:text-6xl tracking-wide font-light text-[#0A0A0C]">Babafemi - Creator, Strategist and Founder</p>
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-5xl xl:text-8xl font-extrabold font-bigShoulders tracking-wide  text-[#F7F3E8]leading-tight uppercase">
           Building Things That
