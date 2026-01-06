@@ -47,7 +47,7 @@ export const Footer = ({ isTransparent = false }: FooterProps) => {
   if (isTransparent) {
     return (
       <footer className="fixed bottom-0 left-0 right-0 z-40 py-4 px-6">
-        <div className="flex items-center justify-center ml-10 sm:ml-12 lg:ml-20">
+        <div className="flex items-center justify-center">
           <p className="text-xs text-white/60 text-center">
             © {new Date().getFullYear()} Babafemi Fagbemi
           </p>
