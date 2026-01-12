@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -32,15 +34,33 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      if (!formRef.current) return;
+      const result = await emailjs.sendForm(
+        "service_bf6mnxe",
+        "template_dq77dp2",
+        formRef.current,
+        "1QCsMAUZZPckmIgkO"
+      );
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+      console.log("Email sent successfully:", result.text);
 
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      formRef.current.reset();
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -63,7 +83,11 @@ export const ContactSection = () => {
         </div>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="reveal space-y-6">
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="reveal space-y-6"
+        >
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
               <label className="block text-xs uppercase tracking-wider text-dark-foreground/50 mb-2">
@@ -73,6 +97,7 @@ export const ContactSection = () => {
                 required
                 placeholder="Jane Smith"
                 className="bg-dark-foreground/5 border-dark-foreground/20 text-dark-foreground placeholder:text-dark-foreground/30 focus:border-dark-foreground"
+                name="name"
               />
             </div>
             <div>
@@ -84,6 +109,7 @@ export const ContactSection = () => {
                 type="email"
                 placeholder="janesmith@gmail.com"
                 className="bg-dark-foreground/5 border-dark-foreground/20 text-dark-foreground placeholder:text-dark-foreground/30 focus:border-dark-foreground"
+                name="email"
               />
             </div>
           </div>
@@ -97,6 +123,7 @@ export const ContactSection = () => {
               rows={5}
               placeholder="Your message..."
               className="bg-dark-foreground/5 border-dark-foreground/20 text-dark-foreground placeholder:text-dark-foreground/30 focus:border-dark-foreground resize-none"
+              name="message"
             />
           </div>
 
